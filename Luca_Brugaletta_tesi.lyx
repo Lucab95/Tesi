@@ -588,13 +588,9 @@ L'approccio di partenza di SUNNY è quello sequenziale, si pone come obiettivo
  questo primo approccio introducendone uno che sceglieva il numero di feature,
  la configurazione, formata dalle feature e dal valore di k, tutto in modo
  casuale, abbiamo chiamato questa versione 
-\begin_inset Quotes fld
-\end_inset
-
+\emph on
 randk
-\begin_inset Quotes frd
-\end_inset
-
+\emph default
 .
  Una volta ottenuti i risultati da questo metodo li abbiamo poi utilizzati
  per fare un confronto con la versione che sfrutta Simulated annealing,
@@ -635,7 +631,7 @@ Algorithm Selection (AS) è un argomento che attira sempre più interesse
  ricerche in questo campo.
  Per risolvere questo problema, è stato introdotto un formato standard (ASlib)
  utile per la rappresentazione di scenari AS ed è un sistema informativo
- che contiene un numero sempre crescente di dati .
+ che contiene un numero sempre crescente di dati.
  Per comprendere i vantaggi di ASlib, cominciamo parlando dello studio di
  un modello di selezione di algoritmi (AS) con un'interfaccia comune.
 \end_layout
@@ -651,14 +647,18 @@ Rice è stato il primo a formalizzare l'idea di scegliere fra diversi algoritmi
 \emph on
  
 \emph default
-mira a scegliere il miglior algoritmo s(i) da eseguire su tale istanza 
+mira a scegliere il miglior algoritmo s(
+\begin_inset Formula $i$
+\end_inset
+
+) da eseguire su tale istanza 
 \emph on
 i.
 \end_layout
 
 \begin_layout Standard
 Questa scelta viene spesso fatta utilizzando le feature di istanza.
- Le configurazioni sono poi mappate ad un certo algoritmo utilizzando tecniche
+ Le feature sono poi mappate ad un certo algoritmo utilizzando tecniche
  di intelligenza artificiale.
  Ci sono molti modi per affrontare la selezione di algoritmi per istanza,
  queste strategie possono includere un singolo modello che apprende o la
@@ -804,6 +804,104 @@ per ogni
 \end_inset
 
  .
+\end_layout
+
+\begin_layout Standard
+L'algoritmo SUNNY è un approccio di Algorithm Selection originariamente
+ creato per la programmazione a vincoli
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Constraint programming
+\end_layout
+
+\end_inset
+
+ (CP).
+ CP è un paradigma dichiarativo dove le relazioni fra variabili vengono
+ definite attraverso dei vincoli, i quali non specificazione azioni da eseguire
+ ma proprietà che devono essere soddisfatte.
+ Tra gli obiettivi principali di CP vi è quello di modellare e risolvere
+ problemi del soddisfacimento di vincoli (CSP).
+ Il trend è utilizzare il portfolio per aumentare l'efficienza delle soluzioni,
+ perché molto spesso, un risolutore non è in grado di garantire le prestazioni
+ migliori su tutti i problemi.
+\end_layout
+
+\begin_layout Standard
+Un risolutore CP che utilizza portfolio, può essere visto come un risolutore
+ particolare, soprannominato risolutore portfolio.
+ Preso un insieme 
+\begin_inset Formula $m$
+\end_inset
+
+ > 1 di diversi risolutori 
+\begin_inset Formula $s$
+\end_inset
+
+
+\begin_inset Formula $_{1}$
+\end_inset
+
+,...,
+\begin_inset Formula $s$
+\end_inset
+
+
+\begin_inset Formula $_{m}$
+\end_inset
+
+ se ne individua uno che sia globalmente migliore degli altri.
+ Quando si presenta una nuova istanza 
+\emph on
+i 
+\emph default
+non ancora presa in esame, il risolutore portfolio prova a predire quali
+ potrebbero essere i migliori risolutori 
+\begin_inset Formula $s$
+\end_inset
+
+
+\begin_inset Formula $_{1}$
+\end_inset
+
+,..,
+\begin_inset Formula $s$
+\end_inset
+
+
+\begin_inset Formula $_{k}$
+\end_inset
+
+ (con 1 ≤ k ≤ m) per 
+\begin_inset Formula $i$
+\end_inset
+
+
+\emph on
+, 
+\emph default
+ed esegue ogni risolutore (
+\begin_inset Formula $s$
+\end_inset
+
+) sull'istanza 
+\begin_inset Formula $i$
+\end_inset
+
+
+\emph on
+.
+ 
+\emph default
+La scelta su quale risolutore preferire è chiaramente uno dei punti chiave
+ del successo di questo approccio e spesso viene affrontato con tecniche
+ di 
+\emph on
+machine learning 
+\emph default
+(ML).
 \end_layout
 
 \begin_layout Subsection
@@ -953,91 +1051,6 @@ Lo scopo è quello di garantire la disponibilità ed un unico formato per
  simulazione dove i runtime sono stati pre-computati, in questo modo si
  riducono drasticamente i costi di computazione per la riproduzione dei
  dati.
-\end_layout
-
-\begin_layout Section
-Feature Selection
-\end_layout
-
-\begin_layout Standard
-Come abbiamo già detto il problema della scelta dell'algoritmo (AS) mira
- ad individuare il miglior algoritmo, avendone diversi a disposizione.
- Per fare questo utilizziamo un vettore di features, tali features non sono
- altro che le istanze del problema e hanno utilità diverse, alcune risultano
- più attinenti e informative di altre ,scegliere quali di queste ultime
- risultano utili è un problema importante per le performance di AS, questo
- processo è chiamato scelta degli attributi (FS).
-\end_layout
-
-\begin_layout Standard
-In questa sezione parleremo dell'impatto sulle prestazioni delle tecniche
- di FS, con l'utilizzo di ASlib come standard per confrontare i risultati.
- Lo scopo è mostrare come SUNNY può trarre vantaggio dall'utilizzo di diversi
- insiemi di features e in particolare, dagli studi effettuati si riesce
- a dimostrare che con l'utilizzo di tecniche di FS, anche un piccolo numero
- di questi attributi può essere sufficiente per ottenere risultati simili
- all'approccio iniziale che sfrutta invece tutti quelli disponibili.
-\end_layout
-
-\begin_layout Standard
-Le features sono molto importanti per caratterizzare una determinata istanza
- di un problema e costruire modelli di previsione accurati; la scelta degli
- attributi (FS) ha lo scopo di rimuovere quelle features ridondanti, irrilevanti
-, e potenzialmente dannose.
- Scegliere un insieme di features quanto più piccolo, ha il vantaggio di
- semplificare il modello di predizione, riducendo il tempo di training e
- il costo di estrazione di esse, riducendo i casi di overfitting
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-Caso in cui la capacità di prevedere o adattarsi aumentano sui dati di allenamen
-to e diminuiscono su quelli non ancora visionati
-\end_layout
-
-\end_inset
-
- e migliorando l'accuratezza delle previsioni.
-\end_layout
-
-\begin_layout Standard
-Le tecniche di FS non sono altro che la combinazione di due ingredienti:
-\end_layout
-
-\begin_layout Itemize
-Una tecnica di ricerca per trovare sotto-insiemi di attributi validi.
-\end_layout
-
-\begin_layout Itemize
-Una metrica di punteggio per valutare ogni sotto-insieme.
-\end_layout
-
-\begin_layout Standard
-Dato che valutare tutti i possibili sotto-insiemi è computazionalmente impossibi
-le, vengono utilizzate tecniche euristiche per la ricerca dei sotto-insiemi.
- In particolare, parliamo di tecniche greedy
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-Tecnica 
-\begin_inset Quotes fld
-\end_inset
-
-golosa
-\begin_inset Quotes frd
-\end_inset
-
-, perché ad ogni istante sceglie sempre il candidato più promettente
-\end_layout
-
-\end_inset
-
-, sfruttando la selezione in avanti e l'eliminazione all'indietro.
- Nella selezione in avanti, le features vengono integrate in un sotto-insieme
- sempre più grande.
- Nell'eliminazione all'indietro, invece, le combinazioni vengono progressivament
-e rimosse partendo da tutte le features disponibili.
 \end_layout
 
 \begin_layout Subsection
@@ -1196,104 +1209,6 @@ Penalized Average Runtime: metrica che utilizza il tempo totale di esecuzione
 
 \begin_layout Section
 SUNNY
-\end_layout
-
-\begin_layout Standard
-L'algoritmo SUNNY è un approccio di Algorithm Selection originariamente
- creato per la programmazione a vincoli
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-Constraint programming
-\end_layout
-
-\end_inset
-
- (CP).
- CP è un paradigma dichiarativo dove le relazioni fra variabili vengono
- definite attraverso dei vincoli, i quali non specificazione azioni da eseguire
- ma proprietà che devono essere soddisfatte.
- Tra gli obiettivi principali di CP vi è quello di modellare e risolvere
- problemi del soddisfacimento di vincoli (CSP).
- Il trend è utilizzare il portfolio per aumentare l'efficienza delle soluzioni,
- perché molto spesso, un risolutore non è in grado di garantire le prestazioni
- migliori su tutti i problemi.
-\end_layout
-
-\begin_layout Standard
-Un risolutore CP che utilizza portfolio, può essere visto come un risolutore
- particolare, soprannominato risolutore portfolio.
- Preso un insieme 
-\begin_inset Formula $m$
-\end_inset
-
- > 1 di diversi risolutori 
-\begin_inset Formula $s$
-\end_inset
-
-
-\begin_inset Formula $_{1}$
-\end_inset
-
-,...,
-\begin_inset Formula $s$
-\end_inset
-
-
-\begin_inset Formula $_{m}$
-\end_inset
-
- se ne individua uno che sia globalmente migliore degli altri.
- Quando si presenta una nuova istanza 
-\emph on
-i 
-\emph default
-non ancora presa in esame, il risolutore portfolio prova a predire quali
- potrebbero essere i migliori risolutori 
-\begin_inset Formula $s$
-\end_inset
-
-
-\begin_inset Formula $_{1}$
-\end_inset
-
-,..,
-\begin_inset Formula $s$
-\end_inset
-
-
-\begin_inset Formula $_{k}$
-\end_inset
-
- (con 1 ≤ k ≤ m) per 
-\begin_inset Formula $i$
-\end_inset
-
-
-\emph on
-, 
-\emph default
-ed esegue ogni risolutore (
-\begin_inset Formula $s$
-\end_inset
-
-) sull'istanza 
-\begin_inset Formula $i$
-\end_inset
-
-
-\emph on
-.
- 
-\emph default
-La scelta su quale risolutore preferire è chiaramente uno dei punti chiave
- del successo di questo approccio e spesso viene affrontato con tecniche
- di 
-\emph on
-machine learning 
-\emph default
-(ML).
 \end_layout
 
 \begin_layout Standard
@@ -1629,7 +1544,7 @@ sch
 ) e ritorna la sequenza σ.
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 K-NN
 \end_layout
 
@@ -1792,6 +1707,91 @@ Esempio di classificazione
 \end_inset
 
 
+\end_layout
+
+\begin_layout Section
+Feature Selection
+\end_layout
+
+\begin_layout Standard
+Come abbiamo già detto il problema della scelta dell'algoritmo (AS) mira
+ ad individuare il miglior algoritmo, avendone diversi a disposizione.
+ Per fare questo utilizziamo un vettore di features, tali features non sono
+ altro che le istanze del problema e hanno utilità diverse, alcune risultano
+ più attinenti e informative di altre ,scegliere quali di queste ultime
+ risultano utili è un problema importante per le performance di AS, questo
+ processo è chiamato scelta degli attributi (FS).
+\end_layout
+
+\begin_layout Standard
+In questa sezione parleremo dell'impatto sulle prestazioni delle tecniche
+ di FS, con l'utilizzo di ASlib come standard per confrontare i risultati.
+ Lo scopo è mostrare come SUNNY può trarre vantaggio dall'utilizzo di diversi
+ insiemi di features e in particolare, dagli studi effettuati si riesce
+ a dimostrare che con l'utilizzo di tecniche di FS, anche un piccolo numero
+ di questi attributi può essere sufficiente per ottenere risultati simili
+ all'approccio iniziale che sfrutta invece tutti quelli disponibili.
+\end_layout
+
+\begin_layout Standard
+Le features sono molto importanti per caratterizzare una determinata istanza
+ di un problema e costruire modelli di previsione accurati; la scelta degli
+ attributi (FS) ha lo scopo di rimuovere quelle features ridondanti, irrilevanti
+, e potenzialmente dannose.
+ Scegliere un insieme di features quanto più piccolo, ha il vantaggio di
+ semplificare il modello di predizione, riducendo il tempo di training e
+ il costo di estrazione di esse, riducendo i casi di overfitting
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Caso in cui la capacità di prevedere o adattarsi aumentano sui dati di allenamen
+to e diminuiscono su quelli non ancora visionati
+\end_layout
+
+\end_inset
+
+ e migliorando l'accuratezza delle previsioni.
+\end_layout
+
+\begin_layout Standard
+Le tecniche di FS non sono altro che la combinazione di due ingredienti:
+\end_layout
+
+\begin_layout Itemize
+Una tecnica di ricerca per trovare sotto-insiemi di attributi validi.
+\end_layout
+
+\begin_layout Itemize
+Una metrica di punteggio per valutare ogni sotto-insieme.
+\end_layout
+
+\begin_layout Standard
+Dato che valutare tutti i possibili sotto-insiemi è computazionalmente impossibi
+le, vengono utilizzate tecniche euristiche per la ricerca dei sotto-insiemi.
+ In particolare, parliamo di tecniche greedy
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Tecnica 
+\begin_inset Quotes fld
+\end_inset
+
+golosa
+\begin_inset Quotes frd
+\end_inset
+
+, perché ad ogni istante sceglie sempre il candidato più promettente
+\end_layout
+
+\end_inset
+
+, sfruttando la selezione in avanti e l'eliminazione all'indietro.
+ Nella selezione in avanti, le features vengono integrate in un sotto-insieme
+ sempre più grande.
+ Nell'eliminazione all'indietro, invece, le combinazioni vengono progressivament
+e rimosse partendo da tutte le features disponibili.
 \end_layout
 
 \begin_layout Chapter
@@ -2535,6 +2535,70 @@ Algoritmo di ricerca, continua a muoversi verso valori crescenti e si arresta
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bigskip
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bigskip
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bigskip
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bigskip
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -2640,7 +2704,7 @@ L'algoritmo 1 riporta lo pseudo-codice dell'algoritmo di Simulated Annealing
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -3321,6 +3385,22 @@ name "alg:sa_framework-3"
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bigskip
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 SA parte dalla creazione di una prima mossa casuale, che non sarà altro
  che la nostra configurazione di 5 feature e il valore di 
 \begin_inset Formula $k$
@@ -3506,7 +3586,7 @@ Per sfruttare simulated annealing, dopo aver inizializzato la classe, abbiamo
 \begin_inset Float algorithm
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -3988,167 +4068,7 @@ name "alg:sa_framework-2"
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-bigskip
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-bigskip
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-bigskip
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-bigskip
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-bigskip
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-bigskip
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-bigskip
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-bigskip
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-bigskip
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-bigskip
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-La variabile 
+Dall'algoritmo 2 la variabile 
 \begin_inset Quotes fld
 \end_inset
 
@@ -4636,6 +4556,12 @@ La seconda volta, abbiamo utilizzato dei parametri ottimizzati, nel nostro
  limite.
  I parametri risultanti sono stati impostati a 2800 steps, 50000.00 come
  temperatura massima e 10.00 come temperatura minima.
+\end_layout
+
+\begin_layout Standard
+Nell'appendice A, possono essere confrontati i risultati di un altro esperimento
+ che ha visto come protagonista l'approccio di simulated annealing, con
+ lo scopo di evidenziare le differenze tra diversi parametri.
 \end_layout
 
 \begin_layout Chapter
@@ -5396,7 +5322,7 @@ avg.
 \begin_inset Quotes frd
 \end_inset
 
- indicar la media di step compiuti nei casi in cui l'esecuzione si è arrestata
+ indica la media di step compiuti nei casi in cui l'esecuzione si è arrestata
  per timeout
 \end_layout
 
@@ -6615,7 +6541,11 @@ randk
 \emph default
 , che comunque rimane sotto con una differenza di 
 \emph on
-0.4002
+
+\begin_inset Formula $0.4002$
+\end_inset
+
+
 \emph default
 .
  Parlando di gap finale 
@@ -6700,6 +6630,712 @@ Lo scopo di questa tesi è stato quello di valutare metodi di selezione per
  e al 70% per la sostituzione una feature.
 \end_layout
 
+\begin_layout Chapter*
+Appendice A
+\end_layout
+
+\begin_layout Standard
+Di seguito possiamo vedere un confronto fra diversi approcci di simann con
+ differenti valori dei parametri, abbiamo impostato il valore degli steps
+ a 2000 e modificato i parametri di temperatura massima e minima, per vedere
+ quanto erano in grado di influire sui risultati.
+ Tuttavia per questioni di tempo, abbiamo svolto l'esperimento senza prendere
+ in considerazione i due scenari più complessi Sora e Svea.
+ I nomi dei 3 approcci con parametri diversi derivano dalla loro temperatura
+ massima, con l'unico scopo di renderli più semplici da identificare:
+\end_layout
+
+\begin_layout Itemize
+Simann 15000: approccio con Tmax = 15000.00 , Tmin =1.5
+\end_layout
+
+\begin_layout Itemize
+Simann 35000: approccio con Tmax = 35000.00 , Tmin =15
+\end_layout
+
+\begin_layout Itemize
+simann 60000: approccio con Tmax = 60000.00 , Tmin =5
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="9" columns="7">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Scenario
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Simann 15000
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Simann 35000
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Simann 60000
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+σ
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+σ
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+σ
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bado
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+0.7936
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color gray
+0.0180
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.7878
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color gray
+0.359
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.7911
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color gray
+0.0365
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Caren
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.7905
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color gray
+0.0988
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.7309
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color gray
+0.1810
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+0.8152
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color gray
+0.0935
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Magnus
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.5885
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color gray
+0.0672
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.5912
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color gray
+0.0275
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+0.6049
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color gray
+0.00524
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mira
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.1508
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color gray
+0.3744
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+0.0628
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color gray
+0.2543
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.0641
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color gray
+0.1996
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Monty
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.7883
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color gray
+0.1169
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+0.8666
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color gray
+0.1031
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.8185
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color gray
+0.1518
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Quill
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.8118
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color gray
+0.0967
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.8080
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color gray
+0.0975
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.
+\series bold
+8317
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color gray
+0.0728
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Media
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.6036
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+0.6412
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.6329
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Gap su ogni singolo scenario e media dei gap tra tutti gli scenari, σ indica
+ la deviazione standard
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset ERT
 status open
@@ -6710,7 +7346,9 @@ status open
 \backslash
 clearpage
 \backslash
-mbox{}
+mbox{
+\backslash
+thispagestyle{empty}}
 \backslash
 clearpage
 \end_layout
@@ -6718,6 +7356,29 @@ clearpage
 \end_inset
 
 
+\end_layout
+
+\begin_layout Chapter*
+Ringraziamenti
+\end_layout
+
+\begin_layout Standard
+Ringrazio il Prof.
+ Maurizio Gabbrielli per l'opportunità che mi ha offerto e l'aiuto fornitomi
+ durante la fase di stesura della tesi.
+ Un ringraziamento speciale va al Dr.
+ Tong Liu per i consigli e la disponibilità che ha dimostrato in questi
+ ultimi mesi.
+\end_layout
+
+\begin_layout Standard
+Ringrazio la mia famiglia per avermi sostenuto nei momenti più dificili
+ di questo percorso.
+\end_layout
+
+\begin_layout Standard
+Per ultimi ma non meno importanti, ci terrei a ringraziare tutti gli amici
+ che hanno condiviso con me momenti di gioia e di piccole e grandi delusioni.
 \end_layout
 
 \begin_layout Bibliography
