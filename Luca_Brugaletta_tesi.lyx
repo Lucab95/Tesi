@@ -1,0 +1,6863 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass book
+\begin_preamble
+\usepackage[italian]{babel}
+\usepackage{listings}
+\lstset{language=Python}
+\definecolor{lightgrey}{RGB}{250, 250, 250}
+\definecolor{green}{RGB}{10, 105, 10}
+\usepackage[symbol*]{footmisc}
+\usepackage{changepage}
+\end_preamble
+\use_default_options true
+\begin_modules
+algorithm2e
+\end_modules
+\maintain_unincluded_children false
+\language italian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\rightmargin 2.6cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style french
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\listings_params "commentstyle={\color{green}}"
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{titlepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\size larger
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\shape smallcaps
+Alma Mater Studiorum 
+\begin_inset Formula $\cdot$
+\end_inset
+
+ Università di Bologna
+\shape default
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\size default
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.1cm"
+width "15.8cm"
+height "0.1mm"
+
+\end_inset
+
+ 
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5cm"
+width "15.8cm"
+height "0.6mm"
+
+\end_inset
+
+ 
+\series bold
+\size small
+SCUOLA DI SCIENZE
+\begin_inset Newline newline
+\end_inset
+
+ Corso di Laurea in Informatica 
+\series default
+\size default
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 15mm
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size largest
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{
+\end_layout
+
+\end_inset
+
+RANDOMIZED CONFIGURATION FOR 
+\series default
+\size default
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset VSpace 3mm
+\end_inset
+
+ 
+\series bold
+\size largest
+ALGORITHM SELECTOR
+\series default
+\size default
+
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset VSpace 3mm
+\end_inset
+
+ 
+\series bold
+\size largest
+SUNNY
+\series default
+\size default
+
+\begin_inset Newline newline
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 30mm
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Box Frameless
+position "t"
+hor_pos "l"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "48text%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+Relatore:
+\begin_inset Newline newline
+\end_inset
+
+Chiar.mo Prof.
+\begin_inset Newline newline
+\end_inset
+
+MAURIZIO GABBRIELLI
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+Correlatore:
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\shape smallcaps
+\size large
+Chiar.mo Dott.
+ 
+\begin_inset Newline newline
+\end_inset
+
+ TONG LIU
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "l"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "47text%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+raggedleft
+\end_layout
+
+\end_inset
+
+ 
+\series bold
+\size large
+Presentata da:
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace 6.25mm
+\end_inset
+
+
+\series bold
+\size large
+LUCA BRUGALETTA
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace 20mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size large
+III Sessione
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%inserire il numero della sessione in cui ci si laurea
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+Anno Accademico 2017/2018
+\series default
+\size default
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%inserire l'anno accademico a cui si è iscritti
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{titlepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage
+\backslash
+mbox{}
+\backslash
+clearpage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+chapter*{Introduzione}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{Introduzione}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+markboth{INTRODUZIONE}{INTRODUZIONE}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+L’obiettivo di questa tesi è quello di discutere il problema della selezione
+ degli algoritmi ed in particolare di come avviene la selezione delle features
+ per SUNNY, confrontando i risultati che si possono avere con l'utilizzo
+ di una tecnica di ottimizzazione (Simulated Annealing) rispetto ad una
+ selezione randomica per la scelta delle nostre features.
+\end_layout
+
+\begin_layout Standard
+L'algoritmo SUNNY può essere generalizzato nel problema della selezione
+ dell'algoritmo, per cui , approfondiremo prima tale argomento e solo in
+ seguito parleremo dei metodi che abbiamo implementato e delle tecniche
+ utilizzate per effettuare la scelta delle features.
+\end_layout
+
+\begin_layout Standard
+Preso un gruppo di algoritmi, il problema delle selezione degli algoritmi
+ (AS) consiste nell'identificare quale di questi è il migliore per la risoluzion
+e del problema corrente.
+ La selezione dipende da un insieme di attributi (feature) che caratterizzano
+ il problema da risolvere, di seguito vedremo l'impatto della scelta di
+ queste feature sull'algoritmo SUNNY, prendendo come riferimento la libreria
+ AS (ASlib).
+ Il problema della scelta dell'algoritmo fu inizialmente proposto da Rice
+ nel 1976 e negli ultimi decenni ha attirato attenzioni sempre crescenti
+ fornendo diversi approcci per esso.
+ AS viene utilizzato per selezionare il miglior algoritmo atto alla risoluzione
+ di un problema; in modo più specifico, dato un insieme (portfolio) di algoritmi
+ {A
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+
+, ...., A
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+m
+\end_layout
+
+\end_inset
+
+} il problema alla base è quello di predire il miglior algoritmo A
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+k
+\end_layout
+
+\end_inset
+
+ per risolvere un problema non ancora analizzato, questa scelta dipende
+ chiaramente da diversi fattori e da varie misurazioni, principalmente dalle
+ performance (es.
+ il tempo di esecuzione).
+ Per determinare il valore di tali fattori si utilizza un vettore di attributi
+ (feature), ma sfortunatamente non tutte le feature del vettore hanno la
+ stessa importanza, infatti, molto spesso accade che alcuni di questi attributi
+ forniscono più informazioni rispetto ad altri; diventa quindi importante
+ fare una scelta, su quali e quante feature mantenere.
+ Questo è il punto cruciale per le performance dell’algoritmo di selezione
+ (AS), tale processo è noto in machine learning come Feature Selection (FS).
+\end_layout
+
+\begin_layout Standard
+L'approccio di partenza di SUNNY è quello sequenziale, si pone come obiettivo
+ quello di scegliere cinque feature e un valore di k per essi.
+ A livello pratico, il primo passo di questa tesi è stato quello di modificare
+ questo primo approccio introducendone uno che sceglieva il numero di feature,
+ la configurazione, formata dalle feature e dal valore di k, tutto in modo
+ casuale, abbiamo chiamato questa versione 
+\begin_inset Quotes fld
+\end_inset
+
+randk
+\begin_inset Quotes frd
+\end_inset
+
+.
+ Una volta ottenuti i risultati da questo metodo li abbiamo poi utilizzati
+ per fare un confronto con la versione che sfrutta Simulated annealing,
+ tecnica implementata a partire dall'approccio 
+\emph on
+randk
+\emph default
+.
+\end_layout
+
+\begin_layout Chapter
+Preliminari
+\end_layout
+
+\begin_layout Standard
+Uno degli obiettivi principali avendo a disposizione un portfolio di istanze
+ e quello di trovare il miglior algoritmo da applicare, perchè ognuno di
+ questi algoritmi offre prestazioni diverse in base al problema in esame,
+ infatti un algoritmo può offrire buone prestazioni su di un'istanza, ma
+ essere il peggiore su un'altra.
+ Se noi potessimo identificare quando e quale algoritmo utilizzare su di
+ una determinata istanza saremmo in grado di ottenere dei miglioramenti
+ sulle performance generali.
+ Questo è quello di cui si occupa il problema della selezione degli algoritmi:
+\end_layout
+
+\begin_layout Section
+Algorithm Selection
+\end_layout
+
+\begin_layout Standard
+Algorithm Selection (AS) è un argomento che attira sempre più interesse
+ tra ricercatori e professionisti, dopo anni di applicazioni si sono venuti
+ a creare molti dati sull'argomento, ma non si è mai creato uno standard,
+ questo ovviamente rende difficile la condivisione e il confronto dei diversi
+ approcci.
+ Inoltre, crea diversi ostacoli per chi è interessato a lavorare o ad effettuare
+ ricerche in questo campo.
+ Per risolvere questo problema, è stato introdotto un formato standard (ASlib)
+ utile per la rappresentazione di scenari AS ed è un sistema informativo
+ che contiene un numero sempre crescente di dati .
+ Per comprendere i vantaggi di ASlib, cominciamo parlando dello studio di
+ un modello di selezione di algoritmi (AS) con un'interfaccia comune.
+\end_layout
+
+\begin_layout Standard
+Rice è stato il primo a formalizzare l'idea di scegliere fra diversi algoritmi
+ per ogni istanza, introducendo così la selezione di algoritmi.
+ Il problema della selezione di algoritmi per un'istanza 
+\begin_inset Formula $i$
+\end_inset
+
+
+\emph on
+ 
+\emph default
+mira a scegliere il miglior algoritmo s(i) da eseguire su tale istanza 
+\emph on
+i.
+\end_layout
+
+\begin_layout Standard
+Questa scelta viene spesso fatta utilizzando le feature di istanza.
+ Le configurazioni sono poi mappate ad un certo algoritmo utilizzando tecniche
+ di intelligenza artificiale.
+ Ci sono molti modi per affrontare la selezione di algoritmi per istanza,
+ queste strategie possono includere un singolo modello che apprende o la
+ combinazione di più di essi, di modo che, presa l'istanza di un nuovo problema,
+ questi metodi vengano poi utilizzati per decidere quale o quali di questi
+ algoritmi selezionare.
+\end_layout
+
+\begin_layout Standard
+La via più naturale sarebbe scegliere un solo algoritmo per risolvere una
+ determinata istanza, ma lo svantaggio maggiore di questo approccio è che
+ non vi è modo di tornare indietro nel caso in cui l'algoritmo selezionato
+ non offra buone prestazioni.
+\end_layout
+
+\begin_layout Standard
+In alternativa, possiamo cercare una sequenza con un ordine ben definito
+ e un 
+\emph on
+quanto
+\emph default
+ di tempo nel quale possiamo eseguire tutti o un sotto-insieme degli algoritmi
+ del nostro portfolio.
+ In alcuni di questi approcci, il calcolo della sequenza viene trattata
+ come un problema di ottimizzazione con l'obiettivo di massimizzare(minimizzare)
+ uno o più parametri voluti.
+ Ne è un caso l'approccio che abbiamo utilizzato, simulated annealing, tecnica
+ di ottimizzazione, con l'obiettivo della ricerca di un punto di minimo
+ (massimo) globale
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Sia 
+\begin_inset Formula $y$
+\end_inset
+
+=
+\begin_inset Formula $f(x)$
+\end_inset
+
+ una funzione con dominio 
+\begin_inset Formula $Dom(f)$
+\end_inset
+
+.
+ Diciamo che x
+\begin_inset Formula $_{0}$
+\end_inset
+
+è un punto di minimo (massimo) globale per la funzione, e che 
+\begin_inset Formula $f(x_{0})$
+\end_inset
+
+ è il minimo (massimo) globale della funzione se per ogni 
+\begin_inset Formula $x$
+\end_inset
+
+ 
+\begin_inset Formula $\epsilon$
+\end_inset
+
+ 
+\begin_inset Formula $Dom(f)$
+\end_inset
+
+ risulta che 
+\begin_inset Formula $f(x)$
+\end_inset
+
+
+\begin_inset Formula $\geq$
+\end_inset
+
+
+\begin_inset Formula $f(x_{0})$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+, particolarmente utile in situazioni nella quale abbiamo la presenza di
+ più minimi (massimi) locali
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Ci troviamo in presenza di un minimo (massimo) locale, se data 
+\begin_inset Formula $y=f(x)$
+\end_inset
+
+ con dominio
+\begin_inset Formula $Dom(f)$
+\end_inset
+
+.
+ 
+\begin_inset Formula $x$
+\end_inset
+
+
+\begin_inset Formula $_{0}$
+\end_inset
+
+ è un punto di minimo(massimo) locale se preso un intorno di dimensione
+ 
+\begin_inset Formula $\delta$
+\end_inset
+
+, con al centro 
+\begin_inset Formula $x$
+\end_inset
+
+
+\begin_inset Formula $_{0},$
+\end_inset
+
+per ogni 
+\begin_inset Formula $x$
+\end_inset
+
+ appartenente all'intorno 
+\begin_inset Formula $\delta$
+\end_inset
+
+, si ha che 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ 
+\begin_inset Formula $\geq$
+\end_inset
+
+
+\begin_inset Formula $f(x_{0})$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Subsection
+ASlib
+\end_layout
+
+\begin_layout Standard
+Per valutare SUNNY su diversi scenari si utilizza la libreria Algorithm
+ Selection (ASlib).
+ ASlib è stato proposto come formato dati per gli scenari degli algoritmi
+ di selezione, questo formato e tutti i dati che ne risultano ci permettono
+ un confronto equo e conveniente per la selezione degli algoritmi.
+ Le specifiche del formato assumono un approccio generico alla selezione
+ degli algoritmi e sono definite come segue:
+\end_layout
+
+\begin_layout Enumerate
+Viene calcolato un vettore di features 
+\emph on
+f
+\begin_inset Formula $(i)$
+\end_inset
+
+
+\emph default
+ ∈ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+(
+\backslash
+mathcal{F}
+\backslash
+)
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Una tecnica di machine learning 
+\emph on
+
+\begin_inset Formula $s$
+\end_inset
+
+
+\emph default
+ seleziona un algoritmo 
+\begin_inset Formula $a$
+\end_inset
+
+∈ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+(
+\backslash
+mathcal{A}
+\backslash
+)
+\end_layout
+
+\end_inset
+
+ in base ai risultati del vettore di features del punto 1.
+\end_layout
+
+\begin_layout Enumerate
+L'algoritmo 
+\begin_inset Formula $a$
+\end_inset
+
+ viene applicato all'istanza 
+\begin_inset Formula $i$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Viene calcolato un indice 
+\begin_inset Formula $m$
+\end_inset
+
+ che dà una misurazione delle performance, tenendo conto del costo delle
+ features e le prestazioni dell'algoritmo scelto.
+\end_layout
+
+\begin_layout Enumerate
+Alcuni AS non scelgono un solo algoritmo, ma producono una sequenza di diversi
+ algoritmi.
+ Applicano 
+\begin_inset Formula $a$
+\end_inset
+
+ ad 
+\begin_inset Formula $i$
+\end_inset
+
+ utilizzando un certo budget 
+\begin_inset Formula $r$
+\end_inset
+
+∈ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+(
+\backslash
+mathcal{R}
+\backslash
+)
+\end_layout
+
+\end_inset
+
+, valutano le prestazioni, criteri di arresto e ripetono finché necessario,
+ tenendo conto dei progressi fatti durante l'esecuzione di 
+\begin_inset Formula $a$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Lo scopo è quello di garantire la disponibilità ed un unico formato per
+ tutte le informazioni necessarie, rendendo così più facile la comparazione
+ di diversi approcci AS con l'utilizzo degli stessi scenari, tramite diversi
+ parametri di confronto e di strumenti.
+ Chi usa ASlib, inoltre, non deve preoccuparsi di eseguire realmente l'algoritmo
+ sulle istanze, in quanto questo è stato già fatto, essendo una sorta di
+ simulazione dove i runtime sono stati pre-computati, in questo modo si
+ riducono drasticamente i costi di computazione per la riproduzione dei
+ dati.
+\end_layout
+
+\begin_layout Section
+Feature Selection
+\end_layout
+
+\begin_layout Standard
+Come abbiamo già detto il problema della scelta dell'algoritmo (AS) mira
+ ad individuare il miglior algoritmo, avendone diversi a disposizione.
+ Per fare questo utilizziamo un vettore di features, tali features non sono
+ altro che le istanze del problema e hanno utilità diverse, alcune risultano
+ più attinenti e informative di altre ,scegliere quali di queste ultime
+ risultano utili è un problema importante per le performance di AS, questo
+ processo è chiamato scelta degli attributi (FS).
+\end_layout
+
+\begin_layout Standard
+In questa sezione parleremo dell'impatto sulle prestazioni delle tecniche
+ di FS, con l'utilizzo di ASlib come standard per confrontare i risultati.
+ Lo scopo è mostrare come SUNNY può trarre vantaggio dall'utilizzo di diversi
+ insiemi di features e in particolare, dagli studi effettuati si riesce
+ a dimostrare che con l'utilizzo di tecniche di FS, anche un piccolo numero
+ di questi attributi può essere sufficiente per ottenere risultati simili
+ all'approccio iniziale che sfrutta invece tutti quelli disponibili.
+\end_layout
+
+\begin_layout Standard
+Le features sono molto importanti per caratterizzare una determinata istanza
+ di un problema e costruire modelli di previsione accurati; la scelta degli
+ attributi (FS) ha lo scopo di rimuovere quelle features ridondanti, irrilevanti
+, e potenzialmente dannose.
+ Scegliere un insieme di features quanto più piccolo, ha il vantaggio di
+ semplificare il modello di predizione, riducendo il tempo di training e
+ il costo di estrazione di esse, riducendo i casi di overfitting
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Caso in cui la capacità di prevedere o adattarsi aumentano sui dati di allenamen
+to e diminuiscono su quelli non ancora visionati
+\end_layout
+
+\end_inset
+
+ e migliorando l'accuratezza delle previsioni.
+\end_layout
+
+\begin_layout Standard
+Le tecniche di FS non sono altro che la combinazione di due ingredienti:
+\end_layout
+
+\begin_layout Itemize
+Una tecnica di ricerca per trovare sotto-insiemi di attributi validi.
+\end_layout
+
+\begin_layout Itemize
+Una metrica di punteggio per valutare ogni sotto-insieme.
+\end_layout
+
+\begin_layout Standard
+Dato che valutare tutti i possibili sotto-insiemi è computazionalmente impossibi
+le, vengono utilizzate tecniche euristiche per la ricerca dei sotto-insiemi.
+ In particolare, parliamo di tecniche greedy
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Tecnica 
+\begin_inset Quotes fld
+\end_inset
+
+golosa
+\begin_inset Quotes frd
+\end_inset
+
+, perché ad ogni istante sceglie sempre il candidato più promettente
+\end_layout
+
+\end_inset
+
+, sfruttando la selezione in avanti e l'eliminazione all'indietro.
+ Nella selezione in avanti, le features vengono integrate in un sotto-insieme
+ sempre più grande.
+ Nell'eliminazione all'indietro, invece, le combinazioni vengono progressivament
+e rimosse partendo da tutte le features disponibili.
+\end_layout
+
+\begin_layout Subsection
+Metodo di valutazione
+\end_layout
+
+\begin_layout Standard
+Lo scopo di Algorithm Selection, come già detto, è sicuramente quello di
+ ottenere prestazioni migliori rispetto a quanto possa fare un singolo algoritmo.
+ Considerando però un portfolio di risolutori come un unico risolutore,
+ il costo per il calcolo delle features, diventa significativo; parliamo
+ di questo costo come overhead, considerato come il tempo consumato dal
+ portfolio di risolutori e che deve essere preso in considerazione durante
+ la valutazione di un sistema di selezione dell'algoritmo.
+\end_layout
+
+\begin_layout Standard
+Per essere in grado di valutare il guadagno in termini di prestazioni di
+ un sistema che fa uso di AS, si utilizzano due linee guida:
+\end_layout
+
+\begin_layout Itemize
+Le migliori prestazioni ottenute da un singolo algoritmo su tutte le istanze
+ del training, chiamato SBS
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Single best solver
+\end_layout
+
+\end_inset
+
+, ci permette di capire quali sono i risultati che si possono utilizzare
+ senza fare uso di AS;
+\end_layout
+
+\begin_layout Itemize
+Le prestazioni del miglior risolutore virtuale, VBS
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Virtual best solver
+\end_layout
+
+\end_inset
+
+, anche chiamate prestazioni oracolo.
+ VBS effettua sempre la scelta giusta senza produrre overhead sulle istanze,
+ corrisponde ad un portfolio senza overhead che esegue tutti gli algoritmi
+ in parallelo e interrompe la sua esecuzione non appena il primo algoritmo
+ termina.
+\end_layout
+
+\begin_layout Standard
+Le performance delle linee guida su ogni sistema di AS variano in base allo
+ scenario.
+ Si normalizzano quindi le performance 
+\begin_inset Formula $m$
+\end_inset
+
+
+\begin_inset Formula $_{s}$
+\end_inset
+
+= 
+\begin_inset Formula $\sum_{i\in\ensuremath{\mathcal{I}}}m(s(i),i)$
+\end_inset
+
+ del risolutore 
+\begin_inset Formula $s$
+\end_inset
+
+ su uno scenario in base ad SBS e VBS, dove la differenza tra i due viene
+ evidenziata come segue:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{m_{s}}=\frac{m_{SBS}-m_{S}}{m_{SBS}-m_{VBS}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+(
+\backslash
+hat{m}
+\backslash
+)
+\end_layout
+
+\end_inset
+
+ è stato definito come 0, che corrisponde alle prestazioni di SBS, 1 corrisponde
+ invece alle prestazioni ottimali e quindi a VBS, le prestazioni di un sistema
+ AS saranno sempre tra 0 e 1 e se il valore scende sotto lo 0, allora significa
+ che scegliere SBS è una strategia migliore.
+\end_layout
+
+\begin_layout Standard
+Si possono utilizzare diverse metriche per la valutazione degli approcci
+ AS su un certo scenario.
+ FSI
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Fraction of Solved Istances
+\end_layout
+
+\end_inset
+
+ è la proporzione tra il numero di istanze che l'approccio risolve e il
+ numero di istanze dello scenario, viene comunemente utilizzata per confrontare
+ i diversi approcci di AS data la sua semplicità e le informazioni che dà,
+ tuttavia, non tiene conto del tempo impiegato per la risoluzione del problema.
+ Per ovviare a questo problema si utilizza spesso PAR
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Penalized Average Runtime: metrica che utilizza il tempo totale di esecuzione
+ e penalizza le esecuzioni che non riescono a raggiungere la soluzione cercata
+\end_layout
+
+\end_inset
+
+; fissato uno scenario e preso un intero positivo 
+\begin_inset Formula $k$
+\end_inset
+
+, PAR
+\begin_inset Formula $_{k}$
+\end_inset
+
+(S) rappresenta il tempo medio che impiega un approccio S per risolvere
+ tutti i problemi dello scenario, la penalizzazione di 
+\begin_inset Formula $k$
+\end_inset
+
+ x τ è data dalle istanze non risolte da S entro il timeout τ.
+\end_layout
+
+\begin_layout Section
+SUNNY
+\end_layout
+
+\begin_layout Standard
+L'algoritmo SUNNY è un approccio di Algorithm Selection originariamente
+ creato per la programmazione a vincoli
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Constraint programming
+\end_layout
+
+\end_inset
+
+ (CP).
+ CP è un paradigma dichiarativo dove le relazioni fra variabili vengono
+ definite attraverso dei vincoli, i quali non specificazione azioni da eseguire
+ ma proprietà che devono essere soddisfatte.
+ Tra gli obiettivi principali di CP vi è quello di modellare e risolvere
+ problemi del soddisfacimento di vincoli (CSP).
+ Il trend è utilizzare il portfolio per aumentare l'efficienza delle soluzioni,
+ perché molto spesso, un risolutore non è in grado di garantire le prestazioni
+ migliori su tutti i problemi.
+\end_layout
+
+\begin_layout Standard
+Un risolutore CP che utilizza portfolio, può essere visto come un risolutore
+ particolare, soprannominato risolutore portfolio.
+ Preso un insieme 
+\begin_inset Formula $m$
+\end_inset
+
+ > 1 di diversi risolutori 
+\begin_inset Formula $s$
+\end_inset
+
+
+\begin_inset Formula $_{1}$
+\end_inset
+
+,...,
+\begin_inset Formula $s$
+\end_inset
+
+
+\begin_inset Formula $_{m}$
+\end_inset
+
+ se ne individua uno che sia globalmente migliore degli altri.
+ Quando si presenta una nuova istanza 
+\emph on
+i 
+\emph default
+non ancora presa in esame, il risolutore portfolio prova a predire quali
+ potrebbero essere i migliori risolutori 
+\begin_inset Formula $s$
+\end_inset
+
+
+\begin_inset Formula $_{1}$
+\end_inset
+
+,..,
+\begin_inset Formula $s$
+\end_inset
+
+
+\begin_inset Formula $_{k}$
+\end_inset
+
+ (con 1 ≤ k ≤ m) per 
+\begin_inset Formula $i$
+\end_inset
+
+
+\emph on
+, 
+\emph default
+ed esegue ogni risolutore (
+\begin_inset Formula $s$
+\end_inset
+
+) sull'istanza 
+\begin_inset Formula $i$
+\end_inset
+
+
+\emph on
+.
+ 
+\emph default
+La scelta su quale risolutore preferire è chiaramente uno dei punti chiave
+ del successo di questo approccio e spesso viene affrontato con tecniche
+ di 
+\emph on
+machine learning 
+\emph default
+(ML).
+\end_layout
+
+\begin_layout Standard
+SUNNY è un algoritmo portfolio lazy che individua le similitudini fra le
+ istanze per individuare il miglior risolutore o i migliori da utilizzare,
+ il nome deriva dall'acronimo di:
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+SUb-portfolio
+\emph default
+: data un'istanza, selezioniamo il sotto-insieme portfolio più adatto per
+ l'esecuzione.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Nearest Neighbor
+\emph default
+: in poche parole, il vicino più simile, utilizziamo un algoritmo 
+\begin_inset Formula $k$
+\end_inset
+
+-NN per determinare il sub-portfolio, infatti, con questo algoritmo, dalle
+ istanze viste in precedenza, estraiamo le 
+\begin_inset Formula $k$
+\end_inset
+
+ istanze che sono più simili a quella che deve essere risolta.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+laz
+\emph default
+Y: perché non viene definito nessun tipo di modello di predizione in anticipo.
+\end_layout
+
+\begin_layout Standard
+L'algoritmo SUNNY prende in input vari parametri: l'istanza del problema
+ che dobbiamo risolvere, il portfolio dei risolutori, una copia speciale
+ del risolutore
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Risolutore speciale del portfolio mirato alla gestione di casi particolari
+\end_layout
+
+\end_inset
+
+, un parametro 
+\begin_inset Formula $k$
+\end_inset
+
+ (≥ 1) che rappresenta la dimensione del vicino da prendere in considerazione,
+ un timeout τ che sarà il tempo massimo a disposizione per l'esecuzione
+ e un portfolio 
+\emph on
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+(
+\backslash
+mathcal{A}
+\backslash
+)
+\end_layout
+
+\end_inset
+
+
+\emph default
+ di algoritmi.
+ Il nostro algoritmo individua le similitudini fra le varie istanze e produce
+ un sequenza di esecuzione σ
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{ = [(A
+\backslash
+textsubscript1, t
+\backslash
+textsubscript1 ), .
+ .
+ .
+ , (A
+\backslash
+textsubscript h, t
+\backslash
+textsubscript h)] }
+\end_layout
+
+\end_inset
+
+, l'algoritmo A
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+i
+\end_layout
+
+\end_inset
+
+∈ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+(
+\backslash
+mathcal{A}
+\backslash
+)
+\end_layout
+
+\end_inset
+
+
+\emph on
+ 
+\emph default
+viene eseguito per t
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+i
+\end_layout
+
+\end_inset
+
+secondi e la 
+\begin_inset Formula $\sum{}_{i=1}^{h}t_{i}=τ$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Per ogni problema 
+\begin_inset Formula $x$
+\end_inset
+
+ in input , SUNNY utilizza l'algoritmo 
+\begin_inset Formula $k$
+\end_inset
+
+-NN per estrarre tra un insieme di istanze simili, il sotto-insieme N(
+\begin_inset Formula $x$
+\end_inset
+
+, 
+\begin_inset Formula $k$
+\end_inset
+
+) di 
+\begin_inset Formula $k$
+\end_inset
+
+ istanze più adatte per la risoluzione del problema 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ In generale, il vettore delle feature di 
+\begin_inset Formula $x$
+\end_inset
+
+ è un insieme di 
+\begin_inset Formula $F$
+\end_inset
+
+(
+\begin_inset Formula $x$
+\end_inset
+
+) ∈ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+(
+\backslash
+mathcal{R}
+\backslash
+)
+\end_layout
+
+\end_inset
+
+
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+d
+\end_layout
+
+\end_inset
+
+ di attributi numerici che caratterizzano 
+\begin_inset Formula $x$
+\end_inset
+
+ (es.
+ vincoli di 
+\begin_inset Formula $x$
+\end_inset
+
+ o statistiche sulle variabili).
+\end_layout
+
+\begin_layout Standard
+Partendo dal sotto-insieme N(
+\begin_inset Formula $x$
+\end_inset
+
+, 
+\begin_inset Formula $k$
+\end_inset
+
+), SUNNY si basa su tre euristiche utili per creare la sequenza σ:
+\end_layout
+
+\begin_layout Itemize
+H
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+sel
+\end_layout
+
+\end_inset
+
+: seleziona il più piccolo sotto-insieme portfolio S ⊆ 
+\emph on
+A 
+\emph default
+che risolve il maggior numero di sotto istanze in N(
+\begin_inset Formula $x$
+\end_inset
+
+, 
+\begin_inset Formula $k$
+\end_inset
+
+), utilizzando il tempo di esecuzione come parametro di confronto.
+\end_layout
+
+\begin_layout Itemize
+H
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+all
+\end_layout
+
+\end_inset
+
+: assegna ad ogni A
+\begin_inset Formula $_{i}$
+\end_inset
+
+ ∈ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+(
+\backslash
+mathcal{A}
+\backslash
+)
+\end_layout
+
+\end_inset
+
+
+\emph on
+ 
+\emph default
+il tempo di esecuzione t
+\begin_inset Formula $_{i}$
+\end_inset
+
+ ∈ [0, τ ] for i = 1, .
+ .
+ .
+ , h in base al numero di istanze che è riuscito a risolvere.
+ Utilizza poi la copia del risolutore, per valutare tutte le istanze che
+ non erano state risolte.
+\end_layout
+
+\begin_layout Itemize
+H
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+sch
+\end_layout
+
+\end_inset
+
+: riordina gli algoritmi in base al loro tempo di esecuzione per N(
+\begin_inset Formula $x$
+\end_inset
+
+,
+\begin_inset Formula $k$
+\end_inset
+
+) e ritorna la sequenza σ.
+\end_layout
+
+\begin_layout Section
+K-NN
+\end_layout
+
+\begin_layout Standard
+K-nearest neighbors è un algoritmo di classificazione non parametrico, ed
+ è uno tra più semplici fra tutti gli algoritmi di machine learning.
+ L'input comprende le 
+\begin_inset Formula $k$
+\end_inset
+
+ istanze più simili dell'insieme di addestramento e punta ad identificare
+ a quale classe appartiene l'output.
+ L'output è un elemento della classe, scelto tra le 
+\begin_inset Formula $k$
+\end_inset
+
+ istanze simili, dove 
+\begin_inset Formula $k$
+\end_inset
+
+ è un intero, tipicamente con un valore piccolo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $k$
+\end_inset
+
+-NN utilizza un metodo di apprendimento lazy, dove l'apprendimento consiste
+ in una generalizzazione dei dati di addestramento che vengono poi computati
+ solamente durante la fase di classificazione.
+ La scelta di un buon valore per 
+\begin_inset Formula $k$
+\end_inset
+
+ dipende dai dati, valori più grandi per 
+\begin_inset Formula $k$
+\end_inset
+
+ riducono l'effetto del rumore, ma rendono la classificazione computazionalmente
+ più costosa e possono ridurre le differenze tra le classi meno distinte,
+ mentre valori di k più bassi sono più sensibili al rumore.
+ La precisione dell'algoritmo 
+\begin_inset Formula $k$
+\end_inset
+
+-NN, può essere infatti degradata dalla presenza di rumore o di features
+ irrilevanti.
+ Per la realizzazione di un algoritmo di classificazione 
+\begin_inset Formula $k$
+\end_inset
+
+-NN più preciso, è quindi utile assegnare un peso alle istanze simili, in
+ modo che quelle più vicine possano offrire un contributo maggiore rispetto
+ a quelle distanti, un metodo comunemente usato, è la distanza Euclidea.
+ In figura 1.1 possiamo osservare un esempio di classificazione 
+\begin_inset Formula $k$
+\end_inset
+
+-NN.
+\end_layout
+
+\begin_layout Standard
+Data una istanza 
+\begin_inset Formula $i$
+\end_inset
+
+, SUNNY utilizza un algoritmo k-Nearest Neighbors (
+\begin_inset Formula $k$
+\end_inset
+
+-NN), ma a differenza di 
+\begin_inset Formula $k$
+\end_inset
+
+-NN che sceglie un algoritmo per un'istanza, SUNNY sceglie un sotto-insieme
+ N(
+\begin_inset Formula $i$
+\end_inset
+
+, 
+\begin_inset Formula $k$
+\end_inset
+
+) delle 
+\begin_inset Formula $k$
+\end_inset
+
+ istanze simili ad 
+\begin_inset Formula $i$
+\end_inset
+
+.
+ In seguito, crea una sequenza di esecuzione considerando il più piccolo
+ sub-portfolio in grado di risolvere il maggior numero di istanze nello
+ spazio del sotto insieme N(
+\begin_inset Formula $i$
+\end_inset
+
+, 
+\begin_inset Formula $k$
+\end_inset
+
+).
+ In questa sequenza SUNNY, partiziona il tempo di esecuzione per ogni risolutore
+ del sub-portfolio in proporzione al numero di istanze che risolve in N(
+\begin_inset Formula $i$
+\end_inset
+
+, 
+\begin_inset Formula $k$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/luca/Scrivania/k-nn.svg.png
+	rotateOrigin center
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Esempio di classificazione 
+\begin_inset Formula $k$
+\end_inset
+
+-NN: La sequenza di prova (cerchio verde) potrebbe essere classificata nella
+ prima classe, con i quadrati blu, o nella seconda dei triangoli rossi.
+ Se 
+\begin_inset Formula $k$
+\end_inset
+
+=3 (cerchio con la linea continua) viene assegnato alla seconda classe perché
+ ci sono 2 triangoli e solo 1 quadrato.
+ Se 
+\begin_inset Formula $k$
+\end_inset
+
+=5 (cerchio tratteggiato) allora viene assegnato alla prima classe perchè
+ ci sono 3 quadrati contro i 2 triangoli
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+SUNNY-as & OASC
+\end_layout
+
+\begin_layout Standard
+Per sperimentare le due tecniche volte a creare i risultati utili per il
+ confronto, tra l'approccio random e simulated annealing, siamo partiti
+ dall'utilizzo di SUNNY-as, in particolare la versione utilizzata per la
+ OASC challenge
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Open Algorithm Selection Challenge
+\end_layout
+
+\end_inset
+
+.
+ SUNNY-as è stato utile per svolgere la fase di training e di test sugli
+ scenari AS in accordo con gli standard di ASlib, permettendoci di poter
+ sperimentare sui metodi per la scelta degli attributi.
+\end_layout
+
+\begin_layout Standard
+SUNNY-as prevede tre fasi diverse: una di training, una pre-risolutiva e
+ una finale di testing.
+ Nella fase di training SUNNY-as estrae alcune informazioni base dallo scenario
+ (es.
+ portfolio, il risolutore speciale, il timeout) e costruisce tutto quello
+ che poi viene utilizzato da SUNNY per produrre la sequenza di esecuzione,
+ come già spiegato.
+ In generale, questa fase di training è quella dove si fanno tutte le associazio
+ni tra le istanze, il vettore delle features e il tempo di esecuzione di
+ ogni risolutore sull'istanza 
+\emph on
+i.
+ 
+\emph default
+Questa fase può essere vista più come una fase di inizializzazione più che
+ come una di addestramento, dal momento che non vi è nessun modello di apprendim
+ento.
+\end_layout
+
+\begin_layout Standard
+Nella seconda fase, la pre-risolutiva, è possibile filtrare il portfolio
+ iniziale o effettuare scelte tra le features iniziali.
+ Infine, la fase di testing è quella in cui si esegue e si valutano le predizion
+i di SUNNY.
+\end_layout
+
+\begin_layout Standard
+SUNNY-as è completamente scritto in python e la versione per OASC, che chiamerem
+o SUNNY-OASC, prevede due diverse modalità di esecuzione, autok ed fkvar:
+\end_layout
+
+\begin_layout Itemize
+La versione 
+\emph on
+autok
+\emph default
+, è una versione migliorata di SUNNY-as che effettua un training anche sulla
+ dimensione delle k istanze simili, differisce da T-SUNNY
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Trained SUNNY: Versione modificata di SUNNY, aggiungendo una fase di training
+\end_layout
+
+\end_inset
+
+ perché per la scelta dei risolutori utilizza l'algoritmo originale di SUNNY-as.
+\end_layout
+
+\begin_layout Itemize
+La versione 
+\emph on
+fkvar
+\emph default
+, effettua la fase di training sia sulla dimensione delle istanze simili
+ che sui sotto-insiemi di features.
+ SUNNY viene utilizzato come valutatore e viene adottata una tecnica di
+ selezione in avanti di tipo greedy, con lo scopo di scegliere i sotto-insiemi
+ di features per calcolare le istanze simili.
+ Questa procedura è definita nel seguente modo: si considera l'insieme delle
+ features 
+\begin_inset Quotes fld
+\end_inset
+
+non selezionate
+\begin_inset Quotes frd
+\end_inset
+
+ e se ne sceglie una alla volta, da aggiungere ad un insieme di features
+ 
+\begin_inset Quotes fld
+\end_inset
+
+selezionate
+\begin_inset Quotes frd
+\end_inset
+
+, inizialmente vuoto.
+ In questo modo si va a creare un altro insieme che è quello delle features
+ 
+\begin_inset Quotes fld
+\end_inset
+
+da testare
+\begin_inset Quotes frd
+\end_inset
+
+, dopo aver calcolato il valore di 
+\begin_inset Formula $k$
+\end_inset
+
+, SUNNY calcola il miglior punteggio PAR
+\begin_inset Formula $_{10}$
+\end_inset
+
+ che si può raggiungere con l'insieme delle features 
+\begin_inset Quotes fld
+\end_inset
+
+da testare
+\begin_inset Quotes frd
+\end_inset
+
+.
+ In base al risultato, vengono aggiunte altre features, finché le prestazioni
+ non decrescono o la configurazione non ha il numero di features cercate.
+\end_layout
+
+\begin_layout Standard
+Dal momento che la fase di training è costosa a livello di computazione
+ e di tempo, sunny-OASC non viene utilizzato su tutte le istanze disponibili,
+ ma solamente su alcune.
+ Le istanze su cui viene effettuato il training vengono scelte in questo
+ ordine:
+\end_layout
+
+\begin_layout Enumerate
+SUNNY-oasc associa ad ogni istanza il risolutore più veloce per essa.
+\end_layout
+
+\begin_layout Enumerate
+Per ogni risolutore, le istanze vengono ordinate in ordine decrescente in
+ base al tempo di esecuzione impiegato.
+\end_layout
+
+\begin_layout Enumerate
+Per ogni risolutore, si sceglie un'istanza alla volta fino a raggiungere
+ il numero di istanze cercate.
+\end_layout
+
+\begin_layout Standard
+Per la competizione OASC si è ritenuto che la dimensione del sotto-insieme
+ di features per ottenere buone prestazioni fosse equivalente a cinque.
+ Per questo motivo, per l'approccio 
+\emph on
+fkvar
+\emph default
+ si sono considerate sufficienti 1500 istanze e un valore di k compreso
+ fra 3 e 30, tutto questo allo scopo di ridurre il tempo di esecuzione.
+ Durante l'esecuzione di 
+\emph on
+fkvar
+\emph default
+, viene eseguito anche 
+\emph on
+autok
+\emph default
+ con il valore di 
+\begin_inset Formula $k$
+\end_inset
+
+ che va da 3 a 80, 
+\emph on
+autok
+\emph default
+ viene utilizzato come risolutore speciale, così, se SUNNY produce un risultato
+ migliore con l'utilizzo dell'intero insieme delle features, allora, si
+ tiene il risultato di 
+\emph on
+autok.
+\end_layout
+
+\begin_layout Standard
+SUNNY-OASC richiede python v2 ed è composto da cinque cartelle: 
+\begin_inset Quotes fld
+\end_inset
+
+data
+\begin_inset Quotes frd
+\end_inset
+
+ e 
+\begin_inset Quotes fld
+\end_inset
+
+results
+\begin_inset Quotes frd
+\end_inset
+
+ che contengono rispettivamente i dati e i risultati della competizione
+ OASC, 
+\begin_inset Quotes fld
+\end_inset
+
+src
+\begin_inset Quotes frd
+\end_inset
+
+ contiene lo script originale di sunny-as, 
+\begin_inset Quotes fld
+\end_inset
+
+oasc
+\begin_inset Quotes frd
+\end_inset
+
+ contiene gli script per lavorare sulla cartella 
+\begin_inset Quotes fld
+\end_inset
+
+src
+\begin_inset Quotes frd
+\end_inset
+
+ nella fase di training e di testing, 
+\begin_inset Quotes fld
+\end_inset
+
+main
+\begin_inset Quotes frd
+\end_inset
+
+ contiene gli script che chiamano automaticamente 
+\begin_inset Quotes fld
+\end_inset
+
+oasc
+\begin_inset Quotes frd
+\end_inset
+
+ per le diverse modalità di esecuzione.
+\end_layout
+
+\begin_layout Standard
+Per eseguire lo script, va prima svolta la fase di training poi quella di
+ testing, bisogna quindi recarsi nella cartella 
+\begin_inset Quotes fld
+\end_inset
+
+main
+\begin_inset Quotes frd
+\end_inset
+
+ ed eseguire i seguenti comandi:
+\end_layout
+
+\begin_layout Itemize
+Training:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+main:$~ sh make_oasc_tasks.sh > tasks.txt
+\end_layout
+
+\begin_layout Plain Layout
+
+main:$~ sh oasc_train.sh run_fkvar tasks.txt
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Testing:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+main:$~ sh make_oasc_tasks.sh > tasks.txt 
+\end_layout
+
+\begin_layout Plain Layout
+
+main:$~ sh oasc_test.sh fkvar tasks.txt
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+medskip
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nel caso in cui volessimo cambiare metodo di approccio, basta sostituire
+ 
+\begin_inset Quotes fld
+\end_inset
+
+fkvar
+\begin_inset Quotes frd
+\end_inset
+
+ con l'approccio desiderato, quelli da noi implementati, sono 
+\begin_inset Quotes fld
+\end_inset
+
+randk
+\begin_inset Quotes frd
+\end_inset
+
+ e 
+\begin_inset Quotes fld
+\end_inset
+
+simann
+\begin_inset Quotes frd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Inoltre, è possibile eseguire SUNNY su di un singolo scenario, in modo da
+ ridurre i tempi di training e di testing, questa modalità è poi quella
+ che abbiamo utilizzato per fare le varie prove durante la fase di progettazione
+ e implementazione dei nuovi metodi.
+ Per usare questa modalità, bisogna prima recarsi nella cartella 
+\begin_inset Quotes fld
+\end_inset
+
+oasc
+\begin_inset Quotes frd
+\end_inset
+
+ e poi eseguire i seguenti comandi:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bigskip
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+ oasc:$~ python run_fkvar.py Caren # training,
+\end_layout
+
+\begin_layout Plain Layout
+
+ oasc:$~ python result.py Caren fkvar # testing 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bigskip
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Anche qui, ovviamente, si può cambiare approccio semplicemente sostituendo
+ 
+\begin_inset Quotes fld
+\end_inset
+
+fkvar
+\begin_inset Quotes frd
+\end_inset
+
+, in aggiunta si può scegliere lo scenario su cui eseguire SUNNY andando
+ a sostituire 
+\begin_inset Quotes fld
+\end_inset
+
+Caren
+\begin_inset Quotes frd
+\end_inset
+
+ con uno degli scenari disponibili.
+ Dopo aver eseguito la fase di testing, ci tornerà dei risultati che saranno
+ salvati in un file json con il nome dello scenario utilizzato, questo file
+ potremo trovarlo dentro la cartella con il nome dell'approccio utilizzato,
+ 
+\begin_inset Quotes fld
+\end_inset
+
+fkvar
+\begin_inset Quotes frd
+\end_inset
+
+ nel nostro caso.
+ Di seguito riporto la lista degli scenari a disposizione, aventi come obiettivo
+ la minimizzazione e su cui abbiamo provato i vari approcci:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Bado Caren Magnus Mira Monty Quill Sora Svea
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Infine, per la valutazione dei risultati abbiamo utilizzato OASC_starterkit
+ un wrapper
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+metodo di approccio di FS, valuta i sotto-insiemi di features cercando di
+ inviduarne le interazioni
+\end_layout
+
+\end_inset
+
+ che utilizza lo stesso metodo di valutazione utilizzato durante la competizione
+ oasc.
+ Questo script ritorna un valore sulla bontà in termini di efficienza dell'appro
+ccio utilizzato, con un punteggio compreso tra [0,1], per utilizzarlo bisogna
+ prima integrare OASC_starterkit e dopo esserci posizionati in questa cartella
+ dare il seguente comando:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bigskip
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+OASC_starterkit:$~ python stats.py 
+\end_layout
+
+\begin_layout Plain Layout
+
+		  ../oasc-master/results/fkvar/Caren.json
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bigskip
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Quotes fld
+\end_inset
+
+Caren.json
+\begin_inset Quotes frd
+\end_inset
+
+ contiene i risultati provenienti dalla fase di testing.
+\end_layout
+
+\begin_layout Section
+Approccio 
+\emph on
+randk
+\end_layout
+
+\begin_layout Standard
+Abbiamo deciso di implementare questo approccio come punto di partenza e
+ baseline per simulated annealing, ma anche per poi poterne confrontare
+ i risultati.
+ L'approccio 
+\emph on
+fkvar
+\emph default
+ è stato utilizzato come punto di partenza, abbiamo creato i file run_randk.py
+ e randk.py, copie in seguito modificate dei rispettivi file run_fkvar.py
+ e kit.py, il limite sul numero di features fissato a 5 è stato rimosso,
+ abbiamo invece optato per la scelta di questo valore in modo casuale e
+ sopratutto ad ogni iterazione, in un range che poteva andare da [3,15].
+\end_layout
+
+\begin_layout Standard
+Le features non vengono più scelte con la tecnica di selezione in avanti,
+ ma vengono calcolate in modo casuale insieme ad una 
+\begin_inset Formula $k$
+\end_inset
+
+ scelta anch'essa casualmente, una volta ottenuto tutto l'occorrente, ovvero
+ l'insieme delle features 
+\begin_inset Quotes fld
+\end_inset
+
+da valutare
+\begin_inset Quotes frd
+\end_inset
+
+ e la 
+\begin_inset Formula $k$
+\end_inset
+
+, vengono poi passate alla funzione run_evaluator che calcolava il PAR
+\begin_inset Formula $_{10}$
+\end_inset
+
+ e in base al risultato si decideva, se tenere questo insieme di features
+ o se ricominciare questo ciclo mantenendo il miglior risultato ottenuto
+ fino a quel momento.
+ In questo metodo abbiamo impostato un totale di 1000 confronti e ritornare
+ in output il miglior insieme di features, la miglior 
+\begin_inset Formula $k$
+\end_inset
+
+ e il PAR
+\begin_inset Formula $_{10}$
+\end_inset
+
+ che ne risultavano.
+\end_layout
+
+\begin_layout Standard
+Di seguito riporto due stringhe di codice utilizzate per effettuare il calcolo
+ dei valori casuali:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+elements = random.randint(3,15) 
+\end_layout
+
+\begin_layout Plain Layout
+
+random.sample(features,elements)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bigskip
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La variabile 
+\begin_inset Quotes fld
+\end_inset
+
+elements
+\begin_inset Quotes frd
+\end_inset
+
+ è il numero di features che deve avere la configurazione finale, e viene
+ calcolato ad ogni iterazione.
+ 
+\begin_inset Quotes fld
+\end_inset
+
+features
+\begin_inset Quotes frd
+\end_inset
+
+ è invece il vettore delle features.
+\end_layout
+
+\begin_layout Standard
+random.randint() ritorna un valore casuale intero compreso nel range indicato.
+\end_layout
+
+\begin_layout Standard
+random.sample() calcola invece una configurazione formata da un numero di
+ features pari al valore di 
+\begin_inset Quotes fld
+\end_inset
+
+elements
+\begin_inset Quotes frd
+\end_inset
+
+, senza la possibilità di avere ripetizione.
+\end_layout
+
+\begin_layout Section
+Approccio 
+\emph on
+simann
+\end_layout
+
+\begin_layout Standard
+Per questo approccio, il punto di partenza è stata la versione 
+\emph on
+randk
+\emph default
+, con l'aggiunta di un modulo per l'utilizzo di simulated annealing, prima
+ di introdurre però questa metodo sembra doveroso approfondire cos'è simulated
+ annealing e del perché abbiamo scelto proprio questa tecnica.
+\end_layout
+
+\begin_layout Subsection
+Simulated annealing
+\end_layout
+
+\begin_layout Standard
+Una tra le motivazioni principali per la quale abbiamo deciso di implementare
+ tale tecnica è data dalle sue prestazioni, infatti, avremmo potuto usare
+ altri algoritmi di ricerca locale, come ad esempio hill-climbing
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Algoritmo di ricerca, continua a muoversi verso valori crescenti e si arresta
+ non appena trova un punto di massimo, locale o globale che sia
+\end_layout
+
+\end_inset
+
+, ma soffre del problema di arrestarsi su dei massimi (minimi) locali.
+ Come possiamo osservare dalla figura 2.1, questo algoritmo, partendo da
+ current state, andrebbe a muoversi in direzione crescente, fino ad arrivare
+ a local maximum ed arrestarsi in quel punto perché non sarebbe più possibile
+ ottenere ulteriori miglioramenti.
+ Questo problema può essere risolto con la versione casuale che abbiamo
+ implementato, ma risulta essere poco efficiente.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/luca/Scrivania/img.png
+	scale 70
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Hill climbing, con l'obiettivo di cercare un punto di massimo globale.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bigskip
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Quindi, combinando entrambe le tecniche riusciamo ad ottenere una visita
+ completa ed efficiente e parliamo in questo caso di Simulated annealing
+ (SA).
+ SA fonda le sue basi nella statistica meccanica.
+ Sviluppato originariamente da Kirkpatrick [10] per risolvere problemi di
+ ottimizzazione combinatoria e discreta.
+ SA è nato come metodo di simulazione della tempra (annealing) dei solidi.
+ L'annealing è il processo con il quale un solido, portato allo stato fluido,
+ tramite riscaldamento ad alte temperature, viene riportato di nuovo allo
+ stato solido o cristallino, controllando e riducendo gradualmente la temperatur
+a.
+\end_layout
+
+\begin_layout Standard
+Per comprendere SA, possiamo introdurre un altro problema, la discesa del
+ gradiente, ed immaginare come obiettivo, quello di far scendere una pallina
+ da ping pong nel punto più basso di una superficie rocciosa.
+ Se lasciamo scivolare la pallina, si fermerà in un punto che è un minimo
+ locale, scuotendo la superficie, possiamo farla uscire dal minimo locale
+ e farla spostare verso un altro minimo; l'idea alla base è quella di scuotere
+ la superficie abbastanza forte da far rimbalzare la pallina via dal punto
+ di minimo locale, ma non così forte da farla uscire dal punto di minimo
+ globale.
+ SA si basa proprio su questo, cominciare a scuotere tanto (partendo da
+ una temperatura alta) e ridurre gradualmente l'intensità delle scosse (abbassan
+do gradualmente la temperatura).
+\end_layout
+
+\begin_layout Standard
+SA si comporta come hill climbing, ma invece di scegliere la miglior mossa
+ disponibile, ne sceglie una casuale.
+ Se la nuova mossa, fornisce un miglioramento della soluzione, viene sempre
+ accettata.
+ In caso contrario, l'algoritmo decide se accettare la nuova mossa con un
+ probabilità minore di 1.
+ Tale probabilità decresce esponenzialmente in base a quanto è 
+\begin_inset Quotes fld
+\end_inset
+
+cattiva
+\begin_inset Quotes frd
+\end_inset
+
+ la nuova mossa.
+ Altro valore che diminuisce la probabilità è la temperatura, più si abbassa,
+ minori saranno le probabilità di accettare una mossa che peggiora il risultato.
+\end_layout
+
+\begin_layout Standard
+L'algoritmo 1 riporta lo pseudo-codice dell'algoritmo di Simulated Annealing
+ che abbiamo adottato:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+SetKwFunction
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+FMain
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+SA
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+SetKwProg
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Fn
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Function
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+:
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+KwRet
+\end_layout
+
+\end_inset
+
+ sequenza
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+Fn
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+FMain
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $steps,Tmax,Tmin$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+crea una prima sequenza in modo casuale
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+;
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $step\gets0$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+;
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+While
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $(step<steps)\&\&(timer<limit)$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\texttt{self}.move()$
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+genera nuova sequenza
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+;
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $E\gets\texttt{self}.energy()$
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+valuta la mossa
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+;
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\triangle E\gets E-E'$
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+nuovaE - vecchiaE
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+;
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+eIf
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $(\triangle E>0.0)\&\&(exp(\frac{-\triangle E}{T})<random.random())$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+ripristina i valori precedenti
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+;
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+accetta il nuovo stato e confrontalo con il migliore
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $step\gets step+1$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+;
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simulated Annealing
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:sa_framework-3"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+SA parte dalla creazione di una prima mossa casuale, che non sarà altro
+ che la nostra configurazione di 5 feature e il valore di 
+\begin_inset Formula $k$
+\end_inset
+
+, inizialmente scelti in modo casuale e con l'obiettivo di fornire un punto
+ di partenza per le future scelte di ottimizzazione.
+ In seguito si sceglie la temperatura, che richiede due valori, un valore
+ massimo e uno minimo, la temperatura massima è il punto di partenza che
+ va lentamente a scendere e la temperatura minima è il punto di arresto.
+\end_layout
+
+\begin_layout Standard
+Altro parametro importante è 
+\begin_inset Quotes fld
+\end_inset
+
+steps
+\begin_inset Quotes frd
+\end_inset
+
+, con cui si definisce il numero di operazioni che dovranno essere effettuate
+ prima delle terminazione, 
+\begin_inset Quotes fld
+\end_inset
+
+step
+\begin_inset Quotes frd
+\end_inset
+
+ è invece un contatore con valore iniziale 0 e viene incrementato di 1 per
+ ogni operazione.
+ Ad ogni step si calcola una nuova mossa, o modifica alla configurazione
+ di partenza, questa nuova configurazione viene poi valutata e in base al
+ risultato si decide poi se tenerla o se escluderla.
+ Anche se il risultato è negativo SA prevede l'accettazione del risultato
+ con una certa probabilità.
+ Il metodo per il calcolo della probabilità per un valore che peggiora il
+ risultato è data da questa formula:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $exp(\frac{-\triangle E}{T})<random.random()$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+dove 
+\begin_inset Formula $\triangle E$
+\end_inset
+
+ equivale alla differenza tra il nuovo valore di energia e il precedente.
+\end_layout
+
+\begin_layout Itemize
+exp (
+\begin_inset Formula $x$
+\end_inset
+
+) produce l'esponenziale di 
+\begin_inset Formula $x$
+\end_inset
+
+: 
+\begin_inset Formula $e^{x}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+random.random() produce un valore in virgola mobile compreso tra 0 ed 1.
+\end_layout
+
+\begin_layout Subsection
+Implementazione
+\end_layout
+
+\begin_layout Standard
+Come già accennato, per l'implementazione siamo partiti dall'approccio 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{
+\backslash
+textit{randk}}
+\end_layout
+
+\end_inset
+
+, abbiamo creato due file run_simann.py e simann.py e importato dentro la
+ cartella 
+\begin_inset Quotes fld
+\end_inset
+
+oasc
+\begin_inset Quotes frd
+\end_inset
+
+ il modulo 
+\begin_inset Quotes fld
+\end_inset
+
+simanneal
+\begin_inset Quotes frd
+\end_inset
+
+ contenente la classe Annealer.
+\end_layout
+
+\begin_layout Standard
+In tale versione, abbiamo impostato il numero di features a 5, motivo per
+ il quale, nella creazione della configurazione di partenza, abbiamo mantenuto
+ lo stesso procedimento di 
+\emph on
+randk
+\emph default
+, ma fissando il numero di elementi a 5.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bigskip
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+random.sample(features,5)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bigskip
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Per sfruttare simulated annealing, dopo aver inizializzato la classe, abbiamo
+ definito la nostra mossa, che andava poi valutata e in base al risultato
+ si decideva se tenerla o se scartarla come spiegato nella sottosezione
+ 2.2.1.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+SetKwFunction
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+FMain
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Move
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+SetKwProg
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Fn
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Function
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+:
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+Fn
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+FMain
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $change\gets random.\texttt{randint}(1,10)$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+;
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+eIf
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+(change) 
+\begin_inset Formula $>$
+\end_inset
+
+ 7
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $new\_range\gets$
+\end_inset
+
+list(kRange) 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+;
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $new\_range.\texttt{remove}(self.state["k"])$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+;
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $pos\gets random.\texttt{choice}(new\_range)$
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+;
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $z\gets\texttt{self}.state['feat'].split(',')$
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+;
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $featexcept\gets\texttt{list}(features)$
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+;
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $featexcept\gets\texttt{list}(\texttt{set}(features)-\texttt{set}(z))$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+;
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $newfeat\gets random.\texttt{choice}(featexcept)$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+;
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $z[pos]\gets newfeat$
+\end_inset
+
+ 
+\begin_inset Formula $\texttt{self}.state['feat']\gets','.join(z)$
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Calcolo mossa
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:sa_framework-2"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bigskip
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bigskip
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bigskip
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bigskip
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bigskip
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bigskip
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bigskip
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bigskip
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bigskip
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bigskip
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La variabile 
+\begin_inset Quotes fld
+\end_inset
+
+change
+\begin_inset Quotes frd
+\end_inset
+
+ viene utilizzata con lo scopo di rendere il cambio di una delle cinque
+ feature più probabile rispetto al cambio del valore della 
+\begin_inset Formula $k$
+\end_inset
+
+, esattamente il settanta per cento contro il trenta, dato che le k possono
+ essere scelte solamente fra 28 valori possibili e ce ne servirà solamente
+ una alla volta, mentre di features ne serviranno cinque e in base allo
+ scenario in esame potranno andare da un minimo di 46 nel caso di Quill
+ ad un massimo di 483 nel caso di Sora, abbiamo optato per dare maggiore
+ probabilità alla sostituzione delle features.
+\end_layout
+
+\begin_layout Standard
+Durante l'esecuzione se si entra nel primo caso, si sostituisce la 
+\begin_inset Formula $k$
+\end_inset
+
+ con un nuovo valore, scelto tramite random.choice() tra i valori di 
+\begin_inset Quotes fld
+\end_inset
+
+new_range
+\begin_inset Quotes frd
+\end_inset
+
+.
+ La variabile 
+\begin_inset Quotes fld
+\end_inset
+
+new_range
+\begin_inset Quotes frd
+\end_inset
+
+ è utilizzata per decidere il nuovo valore di 
+\begin_inset Formula $k$
+\end_inset
+
+ senza avere ripetizioni, processo ottenuto dalla rimozione del precedente
+ valore di 
+\begin_inset Formula $k$
+\end_inset
+
+ dal range dei possibili valori, che come nel metodo 
+\emph on
+fkvar
+\emph default
+ che in 
+\emph on
+randk
+\emph default
+ è compreso fra 3 e 30.
+\end_layout
+
+\begin_layout Standard
+Nel secondo caso, se change vale meno di 8, andiamo invece a sostituire
+ una delle feature, la feature da sostituire viene scelta con random.choice().
+ Il nuovo valore, come per la 
+\begin_inset Formula $k$
+\end_inset
+
+, evita la ripetizione, per raggiungere questo proposito utilizziamo la
+ variabile featexcept, che contiene tutte le features 
+\begin_inset Quotes fld
+\end_inset
+
+non selezionate
+\begin_inset Quotes frd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Una volta decisa la nostra mossa dobbiamo valutarla, per fare questo utilizziamo
+ energy():
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bigskip
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+SetKwFunction
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+FMain
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+energy
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+SetKwProg
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Fn
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Function
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+:
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+KwRet
+\end_layout
+
+\end_inset
+
+ e
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+Fn
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+FMain
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $e\gets run\_evaluator(src\_path,sub\_scenario\_path,\texttt{self}.state,context)$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+;
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Calcolo Energia
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:sa_framework-1"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bigskip
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La funzione energy() valuta semplicemente la nostra configurazione e la
+ nostra 
+\begin_inset Formula $k$
+\end_inset
+
+, il risultato che otteniamo è poi il nostro PAR
+\begin_inset Formula $_{10}$
+\end_inset
+
+, che in base ai risultati precedenti decideremo se accettare o scartare;
+ la probabilità di accettazione dipende dalla temperatura che abbiamo raggiunto,
+ infatti, una temperatura più alta ci garantisce una probabilità di accettazione
+ maggiore.
+ L'esecuzione dell'algoritmo e di questo ciclo continua finché non raggiungiamo
+ il punto di raffreddamento.
+\end_layout
+
+\begin_layout Subsection
+Scelta dei parametri
+\end_layout
+
+\begin_layout Standard
+Per ottenere buoni risultati da simulated annealing, si devono impostare
+ dei parametri personalizzati in base al problema in esame, in particolare
+ relativi alla temperatura massima, alla temperatura minima e al numero
+ di passi a disposizione.
+\end_layout
+
+\begin_layout Standard
+La scelta di tali parametri gioca un ruolo chiave in simulated annealing,
+ perché queste scelte possono fornire un grandissimo impatto all'efficienza
+ del metodo, purtroppo non è possibile scegliere dei parametri perfetti
+ che possano andare bene per tutti i casi e non esiste nemmeno una via generale
+ per scegliere i più adatti ad uno specifico problema, ma possiamo semplicemente
+ avvicinarci con delle approssimazioni.
+\end_layout
+
+\begin_layout Standard
+Come definito da Kirkpatrick et al.
+ [10], il valore della temperatura T, deve essere settato con un valore
+ abbastanza grande da rendere la probabilità iniziale di accettazione quasi
+ pari ad 1.
+ Però c'è da tenere in considerazione che una temperatura iniziale troppo
+ alta può causare peggiori prestazioni e tempi di computazione più lunghi.
+\end_layout
+
+\begin_layout Standard
+In particolare abbiamo utilizzato simulated annealing con due diversi tipi
+ di parametri; una volta con quelli di default che comprendono una temperatura
+ massima di 25000.00, una temperatura minima di 2.5 e 4000 steps, in realtà
+ i 4000 steps sono una limitazione per garantire tempi di esecuzione ragionevoli
+, dato che per fare una media abbiamo eseguito ogni singolo scenario per
+ 10 volte, con un tempo massimo di 4 ore, oltre il quale, l'esecuzione veniva
+ interrotta.
+\end_layout
+
+\begin_layout Standard
+La seconda volta, abbiamo utilizzato dei parametri ottimizzati, nel nostro
+ caso per settare questi parametri, abbiamo sfruttato una funzione già presente
+ nel modulo di simulated annealing; tale funzione auto() è stata utile per
+ calcolare dei parametri di partenza, non ottimi, perché come già detto
+ risulta difficile farlo, ma che ci hanno permesso di ottenere buoni risultati
+ nella maggioranza dei casi.
+ Abbiamo calcolato i valori automatici per ogni scenario e ne abbiamo fatto
+ una media, questo ci ha permesso di avere tempi di esecuzione decisamente
+ ridotti rispetto ai parametri di default, senza mai andare oltre il tempo
+ limite.
+ I parametri risultanti sono stati impostati a 2800 steps, 50000.00 come
+ temperatura massima e 10.00 come temperatura minima.
+\end_layout
+
+\begin_layout Chapter
+Risultati
+\end_layout
+
+\begin_layout Standard
+In questo capitolo presentiamo i risultati sperimentali ottenuti dai nostri
+ metodi per la selezione delle features.
+ I risultati vengono forniti come una media del punteggio su 10 diverse
+ esecuzioni.
+ Abbiamo preso come risultato finale il gap tra SBS e VBS, utilizzando lo
+ stesso approccio della competizione OASC, abbiamo quindi ritenuto un punteggio
+ vicino ad 1 come VBS e con punteggio di 0 come SBS.
+\end_layout
+
+\begin_layout Standard
+Abbiamo visto il comportamento dei 3 metodi: 
+\emph on
+randk
+\emph default
+, 
+\emph on
+simann
+\emph default
+ e 
+\emph on
+simann-mod
+\emph default
+ su otto diversi scenari, analizzandone il tempo di esecuzione e il punteggio
+ finale.
+ Come ultimo passo abbiamo ricavato un punteggio medio tra tutti gli scenari
+ per individuare un approccio vincitore che nel complesso si comportasse
+ meglio degli altri.
+\end_layout
+
+\begin_layout Section
+Informazioni sull'esperimento
+\end_layout
+
+\begin_layout Standard
+Gli esperimenti sono stati effettuati su due laptop ASUS modello n56j, entrambi
+ con processore Intel core i-7 4770HQ, SSD da 240gb, uno con 8gb di RAM,
+ l'altro con 16gb.
+ In ogni caso l'esperimento è stato svolto su di una macchina virtuale con
+ Ubuntu 18.04.1 LTS a 64 bit e 4GB di RAM dedicata e ha richiesto circa 70
+ ore di lavoro per ogni dispositivo.
+ Ci riferiremo al primo laptop con 8gb di RAM con L
+\begin_inset Formula $_{A}$
+\end_inset
+
+ e a quello con 16gb di RAM con L
+\begin_inset Formula $_{B}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Scenari
+\end_layout
+
+\begin_layout Standard
+Nel nostro caso, abbiamo utilizzato otto scenari, ve ne sarebbero altri
+ ma hanno come obiettivo la massimizzazione e in questa tesi ci siamo occupati
+ solo di problemi di minimizzazione.
+ Nella tabella 3.1 possiamo approfondire gli scenari sul quale abbiamo lavorato,
+ fornendo informazioni e caratteristiche su di essi.
+ Le informazioni sugli scenari presi in esame possono essere trovate nella
+ tabella 3.1, con numero di algoritmi, di feature e di istanze, nel dettaglio
+ facciamo una distinzione tra le istanze della fase di training e le istanze
+ della fase di testing:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="9" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Scenario
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Algoritmi
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Features
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Istanze Training
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Istanze Testing
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bado
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+86
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+786
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+393
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Caren
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+95
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+66
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+34
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Magnus
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+19
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+37
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+400
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+201
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mira
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+143
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+145
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+73
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Monty
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+18
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+37
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+420
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+210
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Quill
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+24
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+46
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+550
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+275
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sora
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+483
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1333
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+667
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Svea
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+31
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+115
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1076
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+538
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Scenari presi in esame.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Come si può vedere dalla tabella, visto il ridotto numero di istanze, Caren
+ è stato lo scenario più semplice e di conseguenza il più veloce come tempi
+ di esecuzione per la fase di training, mentre il più complesso e su cui
+ sono state impiegate la maggioranza delle ore di esecuzione è stato Sora.
+ L'approccio utilizzato ha ovviamente influenzato i tempi di esecuzione
+ e anche la macchina sulla quale sono stati effettuati i test seppur con
+ minor peso, possiamo concludere che il metodo 
+\emph on
+randk
+\emph default
+ è stato il più veloce, ma producendo risultati instabili, a seguire
+\emph on
+ simann-mod
+\emph default
+.
+ è stato leggermente più lento di randk, mentre 
+\emph on
+simann
+\emph default
+, non avendo dei paramatri ottimizzati ha impiegato il doppio e in alcuni
+ casi anche il triplo del tempo richiesto da simann-mod.
+ Proprio per questo motivo, e per produrre dei risultati in tempo ragionevole,
+ considerando che ogni scenario andava eseguito 10 volte per ogni approccio,
+ abbiamo deciso di introdurre un timeout, dopo il quale l'esecuzione si
+ arrestava e forniva il risultato migliore ottenuto fino a quel momento.
+\end_layout
+
+\begin_layout Standard
+Tuttavia, gli unici scenari in cui abbiamo superato questo timeout sono
+ stati Sora, e in alcuni casi anche Svea, inoltre, l'unico approccio che
+ ha superato il timeout delle 4 ore è stato 
+\emph on
+simann
+\emph default
+; i casi dove Svea ha superato il timeout, si sono registrati tutti e quattro
+ su 
+\begin_inset Formula $L$
+\end_inset
+
+
+\begin_inset Formula $_{A}$
+\end_inset
+
+ e sono state le quattro esecuzioni effettuate su questo laptop, le quali
+ hanno riportato rispettivamente un numero di step compiuti pari a 3840,
+ 3800, 3880, 3240.
+ Mentre, nel caso di Sora, entrambe le macchine hanno superato il timeout
+ in tutte le 5 esecuzioni che hanno effettuato, quindi hanno impiegato lo
+ stesso tempo, ma hanno avuto un numero di step compiuti diverso; nel caso
+ di 
+\begin_inset Formula $L$
+\end_inset
+
+
+\begin_inset Formula $_{A}$
+\end_inset
+
+ i passi compiuti sono stati circa di 1500 a differenza di 
+\begin_inset Formula $L$
+\end_inset
+
+
+\begin_inset Formula $_{B}$
+\end_inset
+
+ che ha avuto una media più vicina a 1800.
+\end_layout
+
+\begin_layout Standard
+Nella tabella 3.2 possiamo vedere in percentuale su quante delle 10 esecuzioni
+ si è superato il limite temporale, nella seconda colonna invece viene mostrata
+ una media di quanti step sono stati compiuti nel caso in cui si eccedeva
+ il tempo limite.
+ Possiamo evidenziare come nel caso di Sora, non si sia arrivati nemmeno
+ a metà del numero di step prefissati, questo spiega il motivo per cui 
+\emph on
+simann
+\emph default
+ su 
+\begin_inset Quotes fld
+\end_inset
+
+Sora
+\begin_inset Quotes frd
+\end_inset
+
+ abbia prodotto un risultato mediamente più basso rispetto agli altri due
+ approcci.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Scenario
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\delta$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+avg.
+ step
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Svea
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+40%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3690
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sora
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+100%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1685
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Formula $\delta$
+\end_inset
+
+ = percentuale sulle 10 esecuzioni nella quale si è superato il limite di
+ tempo delle 4h, 
+\begin_inset Quotes fld
+\end_inset
+
+avg.
+ step
+\begin_inset Quotes frd
+\end_inset
+
+ indicar la media di step compiuti nei casi in cui l'esecuzione si è arrestata
+ per timeout
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Prestazioni FS
+\end_layout
+
+\begin_layout Standard
+Per fornire un resoconto su come sono andati gli approcci per la selezione
+ delle feature, abbiamo utilizzato un valore tra 0 ed 1, di cui abbiamo
+ già parlato, ed è chiamato 
+\begin_inset Quotes fld
+\end_inset
+
+gap
+\begin_inset Quotes frd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Nella tabella 3.3 vi sono i risultati per ogni scenario con ogni approccio
+ utilizzato, tali risultati sono la media dei valori di gap ottenuti durante
+ le 10 esecuzioni, eccetto per 
+\emph on
+fkvar 
+\emph default
+dove i risultati presi in esame sono quelli della OASC challenge, in grassetto
+ è evidenziato il risultato medio migliore.
+ Inoltre, nella seconda colonna di ogni approccio implementato, possiamo
+ trovare la deviazione standard
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Stima della variabilità di una popolazione di dati o di una variabile casuale
+\end_layout
+
+\end_inset
+
+I quattro approcci che hanno preso parte all'esperimento sono:
+\end_layout
+
+\begin_layout Itemize
+SUNNY randk: approccio con comportamento casuale, calcola una configurazione
+ di 
+\begin_inset Formula $n$
+\end_inset
+
+ feature ad ogni passo ed un valore per 
+\begin_inset Formula $k$
+\end_inset
+
+, valuta il tutto e tiene il risultato migliore tra 1000 confronti.
+\end_layout
+
+\begin_layout Itemize
+SUNNY simann: approccio che utilizza la tecnica di ottimizzazione di simulated
+ annealing, abbiamo impostato 
+\begin_inset Formula $Tmax$
+\end_inset
+
+ a 25000.00, 
+\begin_inset Formula $Tmin$
+\end_inset
+
+ a 2.5 e 
+\begin_inset Formula $steps$
+\end_inset
+
+ a 4000.
+\end_layout
+
+\begin_layout Itemize
+SUNNY simann-mod: approccio basato su 
+\emph on
+simann
+\emph default
+ ma modificato nei parametri, in questo metodo abbiamo calcolato dei parametri
+ più specifici, facendo delle esecuzioni di prova per valutare quali fossero
+ dei parametri accettabili, alla fine abbiamo impostato 
+\begin_inset Formula $Tmax$
+\end_inset
+
+ a 50000.00, 
+\begin_inset Formula $Tmin$
+\end_inset
+
+ a 10.00 e 
+\begin_inset Formula $steps$
+\end_inset
+
+ a 2800.
+\end_layout
+
+\begin_layout Itemize
+SUNNY fkvar: approccio che presenta un metodo di visita sequenziale, parte
+ da una lista di feature inizialmente vuota ed effettua i confronti su tutto
+ l'insieme di feature, scegliendo quella che produce il miglior risultato,
+ in questo modo crea la configurazione cercata, formata da 5 feature e dal
+ miglior valore di 
+\begin_inset Formula $k$
+\end_inset
+
+ per essa.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bigskip
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="11" columns="8">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Scenario
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUNNY randk
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUNNY simann
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUNNY simann-mod.
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUNNY fkvar
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+σ
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+σ
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+σ
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bado
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.7898
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color gray
+0.0517
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.7800
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color gray
+0.0530
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.7900
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color gray
+0.0460
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+0.8470
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Caren
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.7760
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color gray
+0.1575
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.8380
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color gray
+0.1572
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.8476
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color gray
+0.1311
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+0.9450
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Magnus
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.5268
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color gray
+0.0893
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.5890
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color gray
+0.0248
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+0.6067
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color gray
+0.0981
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.5807
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mira
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0318
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color gray
+0.3162
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.1519
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color gray
+0.3141
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.1604
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color gray
+0.2326
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+0.4320
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Monty
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.6803
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color gray
+0.1362
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.8831
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color gray
+0.1269
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.8751
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color gray
+0.0834
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+0.9105
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Quill
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.7835
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color gray
+0.0679
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.8325
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color gray
+0.0953
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.
+\series bold
+8331
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color gray
+0.0818
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.5691
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sora
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.2955
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color gray
+0.0904
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.2687
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color gray
+0.0448
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+0.3556
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color gray
+0.0964
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.1786
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Svea
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.5484
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color gray
+0.0895
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.5933
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color gray
+0.0773
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.6213
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color gray
+0.0300
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+0.6578
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Media
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.5540
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.5791
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.5962
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+0.6401
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Gap su ogni singolo scenario e media dei gap tra tutti gli scenari, σ indica
+ la deviazione standard
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In particolare 
+\emph on
+simann-mod
+\emph default
+, differisce da 
+\emph on
+simann
+\emph default
+ per i valori della temperatura massima, della temperatura minima e del
+ numero di step da effettuare, è stato quello che si è distinto rispetto
+ agli altri due approcci implementati in quanto a punteggio medio.
+\end_layout
+
+\begin_layout Standard
+Prima analizziamo i 3 metodi da noi implementati, per poi concentrarci sul
+ confronto con 
+\emph on
+fkvar
+\emph default
+; tra i nostri metodi 
+\emph on
+simann-mod 
+\emph default
+si è comportato meglio e in particolare ha ottenuto lo score più alto sullo
+ scenario Monty, anche se 
+\emph on
+simann
+\emph default
+ ha paradossalmente ottenuto un punteggio migliore; bisogna però tener conto
+ che
+\emph on
+ simann
+\emph default
+ ha ottenuto quel risultato con tempi medi di (
+\begin_inset Formula $\approx$
+\end_inset
+
+) 26min, a differenza di 
+\emph on
+simann-mod
+\emph default
+ che ne ha impiegati invece (
+\begin_inset Formula $\approx$
+\end_inset
+
+) 14min.
+ Lo scenario dove 
+\emph on
+simann-mod
+\emph default
+ ha invece ottenuto un punteggio peggiore è stato Mira, questo scenario
+ è anche stato l'unico, dove l'approccio 
+\emph on
+randk
+\emph default
+ ha avuto una resa migliore rispetto ad entrambi gli approcci di simulated
+ annealing.
+\end_layout
+
+\begin_layout Standard
+Il punteggio più alto è stato registrato durante l'ottava esecuzione di
+ 
+\begin_inset Quotes fld
+\end_inset
+
+Monty
+\begin_inset Quotes frd
+\end_inset
+
+ con 
+\emph on
+simann
+\emph default
+ e ha riportato un punteggio di 
+\begin_inset Formula $0.9865$
+\end_inset
+
+, mentre il più basso è stato ottenuto sempre da 
+\emph on
+simann
+\emph default
+ sullo scenario 
+\begin_inset Quotes fld
+\end_inset
+
+Mira
+\begin_inset Quotes frd
+\end_inset
+
+ con un punteggio di 
+\begin_inset Formula $-0.8496$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Calcolando il gap medio su tutti gli scenari il vincitore risulta 
+\emph on
+simann-mod
+\emph default
+ con un risultato di 
+\begin_inset Formula $0.5962$
+\end_inset
+
+, a seguire 
+\emph on
+simann
+\emph default
+ con un punteggio di 
+\begin_inset Formula $0.5791$
+\end_inset
+
+ ed infine 
+\emph on
+randk
+\emph default
+ con 
+\begin_inset Formula $0.5540$
+\end_inset
+
+.
+ Possiamo concludere che l'approccio che ha prodotto i risultati migliori
+ è stato 
+\emph on
+simann-mod
+\emph default
+ ed in generale gli approcci di simulated annealing si sono comportati meglio
+ rispetto ad un approccio totalmente casuale.
+\end_layout
+
+\begin_layout Standard
+Riprendendo in esame anche 
+\emph on
+fkvar, 
+\emph default
+il metodo presentato alla OASC challenge del 2017, possiamo vedere che è
+ risultato essere l'approccio più efficiente.
+ Il caso che richiama maggiore attenzione si ha sullo scenario Mira dove
+ c'è una grande differenza di punteggio, pari a 
+\begin_inset Formula $0.5924$
+\end_inset
+
+ se confrontato con 
+\emph on
+simann
+\emph default
+-
+\emph on
+mod
+\emph default
+, leggermente meglio 
+\emph on
+randk
+\emph default
+, che comunque rimane sotto con una differenza di 
+\emph on
+0.4002
+\emph default
+.
+ Parlando di gap finale 
+\emph on
+fkvar
+\emph default
+ ne esce vincitore con un punteggio di
+\series bold
+ 
+\begin_inset Formula $0.6401$
+\end_inset
+
+
+\series default
+, contro i 
+\begin_inset Formula $0.5962$
+\end_inset
+
+ di 
+\emph on
+simann-mod
+\emph default
+ che porta il punteggio medio più alto tra i metodi da noi implementati;
+ dalla tabella 3.3 possiamo notare come a parte simann-mod che è riuscito
+ a competere su qualche scenario, 
+\emph on
+randk e simann 
+\emph default
+non si sono distinti in nessuno scenario, risultando poco competitivi contro
+ il metodo di partenza 
+\emph on
+fkvar
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+Nel complesso possiamo concludere che l'approccio di simulated annealing
+ se definito con dei buoni parametri produce ottimi risultati sopratutto
+ con ottimi tempi di esecuzione, in particolare si possono provare diverse
+ temperature per ottenere risultati diversi.
+ Da quello che abbiamo notato durante la sperimentazione, risulta che una
+ temperatura troppo bassa, come nel caso di 
+\emph on
+simann
+\emph default
+ non ci permette di esplorare per bene lo spazio delle soluzioni, causando
+ così risultati più instabili, in particolare, in alcuni scenari abbiamo
+ notato differenze di punteggio di 0.4 tra un'esecuzione e l'altra.
+ Se si scelgono invece dei parametri più adeguati, nel nostro caso alzando
+ la temperatura massima, si riesce ad avere una visione più completa ottenendo
+ così dei risultati più stabili; tenendo sempre in considerazione che la
+ nuova mossa dell'algoritmo di simulated annealing viene operata in modo
+ casuale ed in casi particolarmente sfortunati, si possono ottenere ugualmente
+ risultati affetti da rumore.
+\end_layout
+
+\begin_layout Chapter*
+Conclusione
+\end_layout
+
+\begin_layout Standard
+Lo scopo di questa tesi è stato quello di valutare metodi di selezione per
+ le feature, diversi da quelli che erano già stati proposti, in particolare
+ andando ad evidenziare i benefici che si possono raggiungere introducendo
+ una tecnica di ottimizzazione come simulated annealing e dimostrando che
+ con l'uso di tali tecniche si possono ottenere ottimi risultati in tempi
+ ragionevoli.
+ Ovviamente, questa tesi non si propone come un risultato definitivo, ma
+ lascia aperte varie possibilità tra cui quella di prendere questo metodo
+ come paragone per altre tecniche di FS o anche la possibilità di effettuare
+ modifiche sui parametri delle tecniche di simulated annealing, in particolare
+ si possono variare le temperature e gli step da effettuare per vedere quali
+ risultati si possono produrre, o ancora si può modificare la funzione move(),
+ da cui si può decidere se cambiare più feature contemporaneamente, rispetto
+ alla nostra move(), che modifica il valore di un'unica feature, o cambiare
+ la probabilità di modifica delle feature rispetto al valore di k, al momento
+ tale valore di scelta è fissato al 30% per la sostituzione della 
+\begin_inset Formula $k$
+\end_inset
+
+ e al 70% per la sostituzione una feature.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage
+\backslash
+mbox{}
+\backslash
+clearpage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-1"
+
+\end_inset
+
+Roberto Amadini, Fabio Biselli, Maurizio Gabbrielli, Tong Liu, Jacopo Mauro.
+ SUNNY for Algorithm Selection: A Preliminary Study.
+ CILC, Jul 2015, Genova, Italy.
+ <hal-01227595>
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-1-2"
+literal "false"
+
+\end_inset
+
+Roberto Amadini, Maurizio Gabbrielli, Jacopo Mauro.
+ SUNNY: a Lazy Portfolio Approach for Constraint Solving.
+ TPLP
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-1"
+
+\end_inset
+
+Bischl, B.
+ and Kerschke, P.
+ and Kotthoff, L.
+ and Lindauer, M.
+ and Malitsky, Y.
+ and Frechétte, A.
+ and Hoos, H.
+ and Hutter, F.
+ and Leyton-Brown, K.
+ and Tierney, K.
+ and Vanschoren, J.
+ ASlib: A Benchmark Library for Algorithm Selection In: Artificial Intelligence
+ Journal (AIJ) (2016), (pp.
+ 41–58)
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-2"
+
+\end_inset
+
+Roberto Amadini, Fabio Biselli, Maurizio Gabbrielli, Tong Liu, Jacopo Mauro.
+ Feature Selection for SUNNY: a Study on the Algorithm Selection Library.
+ ICTAI, Nov 2015, Vietri sul Mare, Italy.
+ <hal-01227600>
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-1"
+
+\end_inset
+
+Tong Liu, Roberto Amadini, Jacopo Mauro.
+ SUNNY with algorithm configuration.
+ Proceedings of Machine Learning Research 79:12-14, 2017
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-2"
+
+\end_inset
+
+Marius Lindauer, Rolf-David Bergdoll, Frank Hutter (2016).
+ An empirical study of per-instance algorithm scheduling.
+ Proceedings of the LION10 (pp.
+ 253–259)
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-4"
+
+\end_inset
+
+Stuart J.
+ Russell, Peter Norvig.
+ Artificial Intelligence A Modern Approach, (pp.
+ 120-125)
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-1"
+
+\end_inset
+
+ K-nearest neighbors algorithm, Wikipedia, The Free Encyclopedia.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-1"
+
+\end_inset
+
+Park, M.-W.
+ and Y.-D.
+ Kim.
+ (1998).
+ “A Systematic Procedure for Setting Parameters in Simulated AnnealingAlgorithms.
+”Computers & Operations Research24(3), 207–217
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-2"
+
+\end_inset
+
+Kirkpatrick, S., Gelatt, C.
+ D.Jr.
+ and Vecchi, M.
+ P., Optimization by simulated annealing.
+ Science, 1983, 220, 671-680
+\end_layout
+
+\end_body
+\end_document
