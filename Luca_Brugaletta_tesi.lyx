@@ -7360,8 +7360,8 @@ Lo scopo di questa tesi è stato quello di valutare metodi di selezione per
  Dopo aver analizzato i risultati con questo metodo, ci siamo mossi verso
  un'altra tecnica, chiamata simulated annealing, con lo scopo di evidenziare
  i benefici che si possono raggiungere introducendo una tecnica di ottimizzazion
-e come simulated annealing e dimostrando che eravamo in grado di ottenere
- buoni risultati in tempi ragionevoli.
+e e dimostrando che eravamo in grado di ottenere buoni risultati in tempi
+ ragionevoli.
 \end_layout
 
 \begin_layout Standard
@@ -7387,15 +7387,16 @@ Ovviamente, questa tesi non si propone come uno studio completo e definitivo,
 \end_layout
 
 \begin_layout Standard
-2)Vi è anche la possibilità di effettuare modifiche sui parametri delle
- tecniche di simulated annealing, in particolare si possono variare le temperatu
-re e gli steps da effettuare per vedere quali risultati si possono produrre.
+2)Vi è la possibilità di effettuare modifiche sui parametri della tecnica
+ di simulated annealing implementata, in particolare si possono variare
+ le temperature e gli steps da effettuare per vedere quali risultati si
+ possono produrre.
 \end_layout
 
 \begin_layout Standard
 3)Si può modificare la funzione move(), da cui si può decidere se cambiare
- più feature contemporaneamente, rispetto alla nostra implementazione, che
- modifica invece il valore di una singola feature o k,
+ più feature contemporaneamente, rispetto alla nostra implementazione che
+ ne modifica invece una sola.
 \end_layout
 
 \begin_layout Standard
@@ -7405,7 +7406,7 @@ re e gli steps da effettuare per vedere quali risultati si possono produrre.
 \begin_inset Formula $k$
 \end_inset
 
- e al 70% per la sostituzione una feature.
+ e al 70% per la sostituzione di una feature.
 \end_layout
 
 \begin_layout Standard
