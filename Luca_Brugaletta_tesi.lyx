@@ -4741,7 +4741,9 @@ In particolare abbiamo utilizzato simulated annealing con due diversi tipi
  i 4000 steps sono una limitazione per garantire tempi di esecuzione ragionevoli
 , dato che per fare una media abbiamo eseguito ogni singolo scenario per
  10 volte, con un tempo massimo di 4 ore, oltre il quale, l'esecuzione veniva
- interrotta.
+ interrotta, questo metodo ha preso il nome di 
+\emph on
+simann.
 \end_layout
 
 \begin_layout Standard
@@ -4756,7 +4758,10 @@ La seconda volta, abbiamo utilizzato dei parametri ottimizzati, nel nostro
  ridotti rispetto ai parametri di default, senza mai andare oltre il tempo
  limite.
  I parametri risultanti sono stati impostati a 2800 steps, 50000.00 come
- temperatura massima e 10.00 come temperatura minima.
+ temperatura massima e 10.00 come temperatura minima, in questo caso, abbiamo
+ chiamato il metodo 
+\emph on
+simann-mod.
 \end_layout
 
 \begin_layout Standard
@@ -4767,34 +4772,52 @@ Nell'appendice A, possono essere confrontati i risultati di un altro esperimento
 \end_layout
 
 \begin_layout Chapter
-Risultati
+Esperimenti empirici
 \end_layout
 
 \begin_layout Standard
 In questo capitolo presentiamo i risultati sperimentali ottenuti dai nostri
- metodi per la selezione delle features.
- I risultati vengono forniti come una media del punteggio su 10 diverse
- esecuzioni.
- Abbiamo preso come risultato finale il gap tra SBS e VBS, utilizzando lo
- stesso approccio della competizione OASC, abbiamo quindi ritenuto un punteggio
- vicino ad 1 come VBS e con punteggio di 0 come SBS.
+ metodi per la selezione delle configurazioni.
+ I risultati vengono forniti come media del punteggio e del tempo di esecuzione
+ su 10 diverse esecuzioni.
+ Per il punteggio abbiamo preso come risultato finale il gap tra SBS e VBS,
+ utilizzando lo stesso approccio della competizione OASC, abbiamo quindi
+ ritenuto un punteggio vicino ad 1 come VBS e con punteggio di 0 come SBS.
 \end_layout
 
 \begin_layout Standard
-Abbiamo visto il comportamento dei 3 metodi: 
+I metodi implementati e che hanno preso parte all'esperimento sono quattro:
+ il metodo di partenza 
+\emph on
+fkvar
+\emph default
+, un metodo puramente causale 
 \emph on
 randk
 \emph default
-, 
+, poi 
 \emph on
-simann
+simann 
 \emph default
- e 
+e
 \emph on
-simann-mod
+ simann-mod 
 \emph default
- su otto diversi scenari, analizzandone il tempo di esecuzione e il punteggio
- finale.
+che fanno entrambi uso della tecnica di ottimizzazione simulated annelaing,
+ quello che li differenzia, sono però i parametri che utilizzano, il secondo
+ dei due, 
+\emph on
+simann-mod, 
+\emph default
+ha una probabilità di accettazione più alta dovuta ai parametri della temperatur
+a massima più alta.
+ Nella sezione 3.3 possiamo tuttavia trovare approfondimenti relativi agli
+ approcci utilizzati.
+\end_layout
+
+\begin_layout Standard
+Tali metodi sono stati eseguiti su otto diversi scenari, e ne abbiamo analizzato
+ il tempo di esecuzione e il punteggio finale.
  Come ultimo passo abbiamo ricavato un punteggio medio tra tutti gli scenari
  per individuare un approccio vincitore che nel complesso si comportasse
  meglio degli altri.
@@ -4830,8 +4853,6 @@ Scenari
 Nel nostro caso, abbiamo utilizzato otto scenari, ve ne sarebbero altri
  ma hanno come obiettivo la massimizzazione e in questa tesi ci siamo occupati
  solo di problemi di minimizzazione.
- Nella tabella 3.1 possiamo approfondire gli scenari sul quale abbiamo lavorato,
- fornendo informazioni e caratteristiche su di essi.
  Le informazioni sugli scenari presi in esame possono essere trovate nella
  tabella 3.1, con numero di algoritmi, di feature e di istanze, nel dettaglio
  facciamo una distinzione tra le istanze della fase di training e le istanze
@@ -5308,9 +5329,12 @@ Come si può vedere dalla tabella, visto il ridotto numero di istanze, Caren
  è stato lo scenario più semplice e di conseguenza il più veloce come tempi
  di esecuzione per la fase di training, mentre il più complesso e su cui
  sono state impiegate la maggioranza delle ore di esecuzione è stato Sora.
- L'approccio utilizzato ha ovviamente influenzato i tempi di esecuzione
- e anche la macchina sulla quale sono stati effettuati i test seppur con
- minor peso, possiamo concludere che il metodo 
+\end_layout
+
+\begin_layout Standard
+L'approccio utilizzato ha ovviamente influenzato i tempi di esecuzione e
+ anche la macchina sulla quale sono stati effettuati i test seppur con minor
+ peso, possiamo quindi dire che il metodo 
 \emph on
 randk
 \emph default
@@ -5318,13 +5342,20 @@ randk
 \emph on
  simann-mod
 \emph default
-.
- è stato leggermente più lento di randk, mentre 
+ è stato leggermente più lento di 
+\emph on
+randk
+\emph default
+, mentre 
 \emph on
 simann
 \emph default
-, non avendo dei paramatri ottimizzati ha impiegato il doppio e in alcuni
- casi anche il triplo del tempo richiesto da simann-mod.
+, non avendo dei parametri ottimizzati ha impiegato il doppio e in alcuni
+ casi anche il triplo del tempo richiesto da 
+\emph on
+simann-mod
+\emph default
+.
  Proprio per questo motivo, e per produrre dei risultati in tempo ragionevole,
  considerando che ogni scenario andava eseguito 10 volte per ogni approccio,
  abbiamo deciso di introdurre un timeout, dopo il quale l'esecuzione si
@@ -5374,7 +5405,7 @@ simann
 
 \begin_layout Standard
 Nella tabella 3.2 possiamo vedere in percentuale su quante delle 10 esecuzioni
- si è superato il limite temporale, nella seconda colonna invece viene mostrata
+ si è superato il limite temporale, nella terza colonna invece viene mostrata
  una media di quanti step sono stati compiuti nel caso in cui si eccedeva
  il tempo limite.
  Possiamo evidenziare come nel caso di Sora, non si sia arrivati nemmeno
@@ -5539,12 +5570,12 @@ avg.
 \end_layout
 
 \begin_layout Section
-Prestazioni FS
+Prestazioni selezione random
 \end_layout
 
 \begin_layout Standard
 Per fornire un resoconto su come sono andati gli approcci per la selezione
- delle feature, abbiamo utilizzato un valore tra 0 ed 1, di cui abbiamo
+ delle configurazioni, abbiamo utilizzato un valore tra 0 ed 1, di cui abbiamo
  già parlato, ed è chiamato 
 \begin_inset Quotes fld
 \end_inset
@@ -5630,6 +5661,18 @@ simann
 \end_inset
 
  a 2800.
+ Innalzare la temperatura ci ha permesso di ottenere risultati migliori
+ perché va ad influire direttamente sulla probabilità di accettazione di
+ mosse 
+\begin_inset Quotes fld
+\end_inset
+
+cattive
+\begin_inset Quotes frd
+\end_inset
+
+ cosi da uscire dai punti di minimo locale come spiegato nella sezione 2.2.1
+ .
 \end_layout
 
 \begin_layout Itemize
@@ -5731,7 +5774,7 @@ SUNNY simann
 \begin_inset Text
 
 \begin_layout Plain Layout
-SUNNY simann-mod.
+SUNNY simann-mod
 \end_layout
 
 \end_inset
@@ -6807,8 +6850,9 @@ Nel complesso possiamo concludere che l'approccio di simulated annealing
 simann
 \emph default
  non ci permette di esplorare per bene lo spazio delle soluzioni, causando
- così risultati più instabili, in particolare, in alcuni scenari abbiamo
- notato differenze di punteggio di 0.4 tra un'esecuzione e l'altra.
+ così risultati più instabili, in particolare, durante le 10 esecuzioni
+ che abbiamo effettuato per ogni scenario abbiamo notato differenze di punteggio
+ che potevano arrivare anche a 0.4 tra un'esecuzione e l'altra.
  Se si scelgono invece dei parametri più adeguati, nel nostro caso alzando
  la temperatura massima, si riesce ad avere una visione più completa ottenendo
  così dei risultati più stabili; tenendo sempre in considerazione che la
@@ -6903,7 +6947,7 @@ SUNNY simann
 \begin_inset Text
 
 \begin_layout Plain Layout
-SUNNY simann-mod.
+SUNNY simann-mod
 \end_layout
 
 \end_inset
@@ -7304,30 +7348,70 @@ Tempi di esecuzione in ore, un punteggio più basso equivale ad un risultato
 \end_layout
 
 \begin_layout Chapter*
-Conclusione
+Conclusioni
 \end_layout
 
 \begin_layout Standard
 Lo scopo di questa tesi è stato quello di valutare metodi di selezione per
- le feature, diversi da quelli che erano già stati proposti, in particolare
- andando ad evidenziare i benefici che si possono raggiungere introducendo
- una tecnica di ottimizzazione come simulated annealing e dimostrando che
- con l'uso di tali tecniche si possono ottenere ottimi risultati in tempi
- ragionevoli.
- Ovviamente, questa tesi non si propone come un risultato definitivo, ma
- lascia aperte varie possibilità tra cui quella di prendere questo metodo
- come paragone per altre tecniche di FS o anche la possibilità di effettuare
- modifiche sui parametri delle tecniche di simulated annealing, in particolare
- si possono variare le temperature e gli step da effettuare per vedere quali
- risultati si possono produrre, o ancora si può modificare la funzione move(),
- da cui si può decidere se cambiare più feature contemporaneamente, rispetto
- alla nostra move(), che modifica il valore di un'unica feature, o cambiare
- la probabilità di modifica delle feature rispetto al valore di k, al momento
- tale valore di scelta è fissato al 30% per la sostituzione della 
+ le feature, diversi da quelli che erano già stati proposti.
+ Abbiamo svolto uno studio preliminare applicando un metodo di selezione
+ delle configurazioni in modo casuale all'algoritmo SUNNY-as, che faceva
+ uso di una tecnica sequenziale.
+ Dopo aver analizzato i risultati con questo metodo, ci siamo mossi verso
+ un'altra tecnica, chiamata simulated annealing, con lo scopo di evidenziare
+ i benefici che si possono raggiungere introducendo una tecnica di ottimizzazion
+e come simulated annealing e dimostrando che eravamo in grado di ottenere
+ buoni risultati in tempi ragionevoli.
+\end_layout
+
+\begin_layout Standard
+Abbiamo effettuato diverse prove sulla tecnica di simulated annealing e
+ giocando con i suoi parametri siamo giunti alla conclusione che nel caso
+ di SUNNY, per ottenere buoni risultati occorreva o aumentare il numero
+ di steps a disposizione, ma questo andava ad influire drasticamente sui
+ tempi di esecuzione, oppure alzare la temperatura massima, in questo modo
+ non solo abbiamo ottenuto punteggi migliori, ma abbiamo anche ridotto i
+ tempi di esecuzione, garantendoci un metodo in grado di competere con la
+ versione di partenza senza il bisogno di analizzare tutte le possibili
+ soluzioni.
+\end_layout
+
+\begin_layout Standard
+Ovviamente, questa tesi non si propone come uno studio completo e definitivo,
+ ma lascia aperte varie possibilità, possiamo infatti agire ancora su diversi
+ punti:
+\end_layout
+
+\begin_layout Standard
+1)Possiamo prendere questo metodo come paragone per altre tecniche di FS.
+\end_layout
+
+\begin_layout Standard
+2)Vi è anche la possibilità di effettuare modifiche sui parametri delle
+ tecniche di simulated annealing, in particolare si possono variare le temperatu
+re e gli steps da effettuare per vedere quali risultati si possono produrre.
+\end_layout
+
+\begin_layout Standard
+3)Si può modificare la funzione move(), da cui si può decidere se cambiare
+ più feature contemporaneamente, rispetto alla nostra implementazione, che
+ modifica invece il valore di una singola feature o k,
+\end_layout
+
+\begin_layout Standard
+4)Si può cambiare la probabilità di modifica delle feature rispetto al valore
+ di k, al momento tale valore di scelta è fissato al 30% per la sostituzione
+ della 
 \begin_inset Formula $k$
 \end_inset
 
  e al 70% per la sostituzione una feature.
+\end_layout
+
+\begin_layout Standard
+L'argomento trattato in questa tesi è ovviamente molto vasto e quindi oltre
+ ai punti elencati vi è la possibilità di modificare l'algoritmo a proprio
+ piacere, lasciando spazio a diversi possibili futuri sviluppi.
 \end_layout
 
 \begin_layout Chapter*
